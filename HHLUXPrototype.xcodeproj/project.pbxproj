@@ -11,6 +11,14 @@
 		F5FA0FD62A84DF7F00260BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FD52A84DF7F00260BA5 /* ContentView.swift */; };
 		F5FA0FD82A84DF8000260BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5FA0FD72A84DF8000260BA5 /* Assets.xcassets */; };
 		F5FA0FDC2A84DF8000260BA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5FA0FDB2A84DF8000260BA5 /* Preview Assets.xcassets */; };
+		F5FA0FE32A84E24E00260BA5 /* SymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FE22A84E24E00260BA5 /* SymbolsView.swift */; };
+		F5FA0FE52A84E25F00260BA5 /* CtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FE42A84E25F00260BA5 /* CtaView.swift */; };
+		F5FA0FEA2A84E77400260BA5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FE92A84E77400260BA5 /* AppSettings.swift */; };
+		F5FA0FEC2A84E87700260BA5 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FEB2A84E87700260BA5 /* URL+Extension.swift */; };
+		F5FA0FEE2A84E9DE00260BA5 /* symbol_names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5FA0FED2A84E9DE00260BA5 /* symbol_names.txt */; };
+		F5FA0FF12A84F7CA00260BA5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */; };
+		F5FA0FF32A850BCD00260BA5 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF22A850BCD00260BA5 /* ListsView.swift */; };
+		F5FA0FF52A850BF200260BA5 /* SelectorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,15 @@
 		F5FA0FD72A84DF8000260BA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5FA0FD92A84DF8000260BA5 /* HHLUXPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HHLUXPrototype.entitlements; sourceTree = "<group>"; };
 		F5FA0FDB2A84DF8000260BA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5FA0FE22A84E24E00260BA5 /* SymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsView.swift; sourceTree = "<group>"; };
+		F5FA0FE42A84E25F00260BA5 /* CtaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtaView.swift; sourceTree = "<group>"; };
+		F5FA0FE92A84E77400260BA5 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		F5FA0FEB2A84E87700260BA5 /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		F5FA0FED2A84E9DE00260BA5 /* symbol_names.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = symbol_names.txt; sourceTree = "<group>"; };
+		F5FA0FEF2A84E9FD00260BA5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		F5FA0FF22A850BCD00260BA5 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
+		F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +53,7 @@
 		F5FA0FC72A84DF7F00260BA5 = {
 			isa = PBXGroup;
 			children = (
+				F5FA0FEF2A84E9FD00260BA5 /* README.md */,
 				F5FA0FD22A84DF7F00260BA5 /* HHLUXPrototype */,
 				F5FA0FD12A84DF7F00260BA5 /* Products */,
 			);
@@ -52,8 +70,15 @@
 		F5FA0FD22A84DF7F00260BA5 /* HHLUXPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				F5FA0FED2A84E9DE00260BA5 /* symbol_names.txt */,
+				F5FA0FE82A84E76400260BA5 /* Helpers */,
 				F5FA0FD32A84DF7F00260BA5 /* HHLUXPrototypeApp.swift */,
 				F5FA0FD52A84DF7F00260BA5 /* ContentView.swift */,
+				F5FA0FE22A84E24E00260BA5 /* SymbolsView.swift */,
+				F5FA0FE42A84E25F00260BA5 /* CtaView.swift */,
+				F5FA0FF22A850BCD00260BA5 /* ListsView.swift */,
+				F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */,
+				F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */,
 				F5FA0FD72A84DF8000260BA5 /* Assets.xcassets */,
 				F5FA0FD92A84DF8000260BA5 /* HHLUXPrototype.entitlements */,
 				F5FA0FDA2A84DF8000260BA5 /* Preview Content */,
@@ -67,6 +92,15 @@
 				F5FA0FDB2A84DF8000260BA5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5FA0FE82A84E76400260BA5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F5FA0FE92A84E77400260BA5 /* AppSettings.swift */,
+				F5FA0FEB2A84E87700260BA5 /* URL+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5FA0FDC2A84DF8000260BA5 /* Preview Assets.xcassets in Resources */,
+				F5FA0FEE2A84E9DE00260BA5 /* symbol_names.txt in Resources */,
 				F5FA0FD82A84DF8000260BA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,8 +174,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5FA0FF12A84F7CA00260BA5 /* MenuView.swift in Sources */,
 				F5FA0FD62A84DF7F00260BA5 /* ContentView.swift in Sources */,
 				F5FA0FD42A84DF7F00260BA5 /* HHLUXPrototypeApp.swift in Sources */,
+				F5FA0FF52A850BF200260BA5 /* SelectorsView.swift in Sources */,
+				F5FA0FE32A84E24E00260BA5 /* SymbolsView.swift in Sources */,
+				F5FA0FF32A850BCD00260BA5 /* ListsView.swift in Sources */,
+				F5FA0FEA2A84E77400260BA5 /* AppSettings.swift in Sources */,
+				F5FA0FE52A84E25F00260BA5 /* CtaView.swift in Sources */,
+				F5FA0FEC2A84E87700260BA5 /* URL+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +317,13 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -313,11 +357,13 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
