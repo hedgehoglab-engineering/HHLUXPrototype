@@ -19,6 +19,14 @@
 		F5FA0FF12A84F7CA00260BA5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */; };
 		F5FA0FF32A850BCD00260BA5 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF22A850BCD00260BA5 /* ListsView.swift */; };
 		F5FA0FF52A850BF200260BA5 /* SelectorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */; };
+		F5FA0FF72A85996200260BA5 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF62A85996200260BA5 /* InputView.swift */; };
+		F5FA0FF92A8599EB00260BA5 /* StatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF82A8599EB00260BA5 /* StatesView.swift */; };
+		F5FA0FFB2A859B0F00260BA5 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FFA2A859B0F00260BA5 /* FloatingTextField.swift */; };
+		F5FA0FFE2A859BBE00260BA5 /* FloatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FFD2A859BBE00260BA5 /* FloatingError.swift */; };
+		F5FA10002A859BF000260BA5 /* SecureTextFieldWithReveal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FFF2A859BF000260BA5 /* SecureTextFieldWithReveal.swift */; };
+		F5FA10022A85A72400260BA5 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA10012A85A72400260BA5 /* ButtonStyles.swift */; };
+		F5FA10072A86660B00260BA5 /* LoadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA10052A86293500260BA5 /* LoadViewModel.swift */; };
+		F5FA10082A86660E00260BA5 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA10032A861F4C00260BA5 /* LoadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +45,14 @@
 		F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		F5FA0FF22A850BCD00260BA5 /* ListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsView.swift; sourceTree = "<group>"; };
 		F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectorsView.swift; sourceTree = "<group>"; };
+		F5FA0FF62A85996200260BA5 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		F5FA0FF82A8599EB00260BA5 /* StatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesView.swift; sourceTree = "<group>"; };
+		F5FA0FFA2A859B0F00260BA5 /* FloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingTextField.swift; sourceTree = "<group>"; };
+		F5FA0FFD2A859BBE00260BA5 /* FloatingError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingError.swift; sourceTree = "<group>"; };
+		F5FA0FFF2A859BF000260BA5 /* SecureTextFieldWithReveal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecureTextFieldWithReveal.swift; sourceTree = "<group>"; };
+		F5FA10012A85A72400260BA5 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		F5FA10032A861F4C00260BA5 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
+		F5FA10052A86293500260BA5 /* LoadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				F5FA0FED2A84E9DE00260BA5 /* symbol_names.txt */,
+				F5FA0FFC2A859B1A00260BA5 /* Components */,
 				F5FA0FE82A84E76400260BA5 /* Helpers */,
 				F5FA0FD32A84DF7F00260BA5 /* HHLUXPrototypeApp.swift */,
 				F5FA0FD52A84DF7F00260BA5 /* ContentView.swift */,
@@ -79,6 +96,10 @@
 				F5FA0FF22A850BCD00260BA5 /* ListsView.swift */,
 				F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */,
 				F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */,
+				F5FA0FF62A85996200260BA5 /* InputView.swift */,
+				F5FA0FF82A8599EB00260BA5 /* StatesView.swift */,
+				F5FA10032A861F4C00260BA5 /* LoadView.swift */,
+				F5FA10052A86293500260BA5 /* LoadViewModel.swift */,
 				F5FA0FD72A84DF8000260BA5 /* Assets.xcassets */,
 				F5FA0FD92A84DF8000260BA5 /* HHLUXPrototype.entitlements */,
 				F5FA0FDA2A84DF8000260BA5 /* Preview Content */,
@@ -99,8 +120,19 @@
 			children = (
 				F5FA0FE92A84E77400260BA5 /* AppSettings.swift */,
 				F5FA0FEB2A84E87700260BA5 /* URL+Extension.swift */,
+				F5FA10012A85A72400260BA5 /* ButtonStyles.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F5FA0FFC2A859B1A00260BA5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F5FA0FFD2A859BBE00260BA5 /* FloatingError.swift */,
+				F5FA0FFA2A859B0F00260BA5 /* FloatingTextField.swift */,
+				F5FA0FFF2A859BF000260BA5 /* SecureTextFieldWithReveal.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,11 +209,19 @@
 				F5FA0FF12A84F7CA00260BA5 /* MenuView.swift in Sources */,
 				F5FA0FD62A84DF7F00260BA5 /* ContentView.swift in Sources */,
 				F5FA0FD42A84DF7F00260BA5 /* HHLUXPrototypeApp.swift in Sources */,
+				F5FA0FF92A8599EB00260BA5 /* StatesView.swift in Sources */,
+				F5FA10082A86660E00260BA5 /* LoadView.swift in Sources */,
 				F5FA0FF52A850BF200260BA5 /* SelectorsView.swift in Sources */,
 				F5FA0FE32A84E24E00260BA5 /* SymbolsView.swift in Sources */,
 				F5FA0FF32A850BCD00260BA5 /* ListsView.swift in Sources */,
+				F5FA0FFB2A859B0F00260BA5 /* FloatingTextField.swift in Sources */,
 				F5FA0FEA2A84E77400260BA5 /* AppSettings.swift in Sources */,
+				F5FA0FF72A85996200260BA5 /* InputView.swift in Sources */,
+				F5FA10072A86660B00260BA5 /* LoadViewModel.swift in Sources */,
+				F5FA0FFE2A859BBE00260BA5 /* FloatingError.swift in Sources */,
+				F5FA10002A859BF000260BA5 /* SecureTextFieldWithReveal.swift in Sources */,
 				F5FA0FE52A84E25F00260BA5 /* CtaView.swift in Sources */,
+				F5FA10022A85A72400260BA5 /* ButtonStyles.swift in Sources */,
 				F5FA0FEC2A84E87700260BA5 /* URL+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

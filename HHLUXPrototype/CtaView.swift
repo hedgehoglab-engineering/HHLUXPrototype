@@ -17,9 +17,9 @@ struct CtaView: View {
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     @ObservedObject var favorite1 = FavoriteItem(icon: "heart")
-    @ObservedObject var favorite2 = FavoriteItem(icon: "star")
-    @ObservedObject var favorite3 = FavoriteItem(icon: "moon")
-    @ObservedObject var favorite4 = FavoriteItem(icon: "sun.max")
+    @ObservedObject var favorite2 = FavoriteItem(icon: "sun.max")
+    @ObservedObject var favorite3 = FavoriteItem(icon: "star")
+    @ObservedObject var favorite4 = FavoriteItem(icon: "moon")
 
     func changeColor(_ item: FavoriteItem) {
         guard !item.isLiked else { return }
@@ -48,20 +48,21 @@ struct CtaView: View {
                 changeColor(favorite1)
                 Task { await favorite1.heartTapSpammable() }
             }
-            .foregroundColor(favorite1.isLiked ? selectedColor : Color.black)
+            .foregroundColor(favorite1.isLiked ? selectedColor : Color.secondary)
     }
 
     var fav2: some View {
         Image(systemName: favorite2.icon)
-            .opacity(favorite2.isDisabled ? 0.2 : 1)
+            .opacity(favorite2.isDisabled ? 0.5 : 1)
             .onTapGesture() {
                 changeColor(favorite2)
+                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
                 Task {
                     await favorite2.heartTap()
                     timerValue = 0.0
                 }
             }
-            .foregroundColor(favorite2.isLiked ? selectedColor : Color.black)
+            .foregroundColor(favorite2.isLiked ? selectedColor : Color.secondary)
             .overlay{
                 if favorite2.isDisabled {
                     progress
@@ -90,10 +91,10 @@ struct CtaView: View {
             Task { await favorite3.heartTap() }
         }) {
             Image(systemName: favorite3.icon)
-                .opacity(favorite3.isDisabled ? 0.2 : 1)
+                .opacity(favorite3.isDisabled ? 0.5 : 1)
         }
         .buttonStyle(ScaleBlurButtonStyle())
-        .foregroundColor(favorite3.isLiked ? selectedColor : Color.black)
+        .foregroundColor(favorite3.isLiked ? selectedColor : Color.secondary)
     }
 
     var fav4: some View {
@@ -102,10 +103,10 @@ struct CtaView: View {
             Task { await favorite4.heartTap() }
         }) {
             Image(systemName: favorite4.icon)
-                .opacity(favorite4.isDisabled ? 0.2 : 1)
+                .opacity(favorite4.isDisabled ? 0.5 : 1)
         }
         .buttonStyle(BlurButtonStyle())
-        .foregroundColor(favorite4.isLiked ? selectedColor : Color.black)
+        .foregroundColor(favorite4.isLiked ? selectedColor : Color.secondary)
     }
 
 }
@@ -134,15 +135,15 @@ extension View {
 struct ScaleBlurButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 1.2 : 1)
-            .blur(radius: configuration.isPressed ? 1 : 0 )
+            .scaleEffect(configuration.isPressed ? 1.5 : 1)
+            .blur(radius: configuration.isPressed ? 2 : 0 )
     }
 }
 
 struct BlurButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .blur(radius: configuration.isPressed ? 1 : 0 )
+            .blur(radius: configuration.isPressed ? 2 : 0 )
     }
 }
 

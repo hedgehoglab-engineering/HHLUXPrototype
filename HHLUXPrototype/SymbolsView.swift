@@ -72,12 +72,18 @@ struct SymbolsView: View {
                 Text("Bold").tag(Font.Weight.bold)
                 Text("Black").tag(Font.Weight.black)
             }
+//            .onChange(of: weight) {
+//                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+//            }
             .pickerStyle(.segmented)
             HStack {
                 Picker(selection: $filled, label: Text("Fill")) {
                     Text("Filled").tag(true)
                     Text("Unfilled").tag(false)
                 }
+//                .onChange(of: filled) {
+//                    UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
+//                }
                 .pickerStyle(.segmented)
                 Picker(selection: $multicolor, label: Text("Color")) {
                     Text("Monochrome").tag(false)
@@ -85,7 +91,6 @@ struct SymbolsView: View {
                 }
                 .pickerStyle(.segmented)
             }
-
         }
     }
 

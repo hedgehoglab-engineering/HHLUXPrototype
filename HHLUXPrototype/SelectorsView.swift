@@ -11,6 +11,8 @@ struct SelectorsView: View {
 
     @State private var selector = 0
     @State private var isShowingPop = false
+    @State private var isShowingSheet = false
+    @State private var isShowingDialog = false
 
     var inline: some View {
         Picker(selection: $selector, label: Text("Inline")) {
@@ -56,12 +58,35 @@ struct SelectorsView: View {
                 }
                 .pickerStyle(.menu)
                 Section {
-                    Button("Popup") {
+                    Button("Modal") {
                         isShowingPop.toggle()
                     }
                     .sheet(isPresented: $isShowingPop) {
                         Form {
-                            inline
+                            wheel
+                        }
+                    }
+                    Button("Sheet") {
+                        isShowingSheet.toggle()
+                    }
+                    .sheet(isPresented: $isShowingSheet) {
+                        Form {
+                            wheel
+                        }
+                        .presentationDetents([.medium, .large])
+                    }
+                    Button("Dialog") {
+                        isShowingDialog.toggle()
+                    }
+                    .confirmationDialog("Dialog", isPresented: $isShowingDialog, titleVisibility: .visible) {
+                        Button("Thin") {
+                            selector = 0
+                        }
+                        Button("Regular") {
+                            selector = 1
+                        }
+                        Button("Bold") {
+                            selector = 2
                         }
                     }
                 }

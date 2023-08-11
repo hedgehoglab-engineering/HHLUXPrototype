@@ -21,6 +21,9 @@ struct ContentView: View {
         case lists
         case menus
         case selectors
+        case input
+        case states
+        case load
     }
 
     var cta: some View {
@@ -35,16 +38,16 @@ struct ContentView: View {
                 Text("- standard cta with no state feedback (spammable)")
             }
             HStack {
-                Image(systemName: "sun.max")
-                Text("- cta with slight feedback (non spammable)")
-            }
-            HStack {
                 Image(systemName: "moon")
-                Text("- cta with noted feedback (non spammable)")
+                Text("- cta with slight blur (non spammable)")
             }
             HStack {
                 Image(systemName: "star")
-                Text("- cta with progress bar (non spammable)")
+                Text("- cta with blur and scaling (non spammable)")
+            }
+            HStack {
+                Image(systemName: "sun.max")
+                Text("- cta with haptic feedback and progress bar (non spammable)")
             }
         }
         .font(.caption)
@@ -53,31 +56,47 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            SymbolsView()
-                .tabItem {
-                    Label("Symbols", systemImage: "apple.logo")
-                }
-                .tag(Tab.symbols)
             cta
             .tabItem {
                 Label("CTA", systemImage: "hand.tap")
             }
             .tag(Tab.cta)
-            MenuView()
-                .tabItem {
-                    Label("Menus", systemImage: "filemenu.and.selection")
-                }
-                .tag(Tab.menus)
             SelectorsView()
                 .tabItem {
                     Label("Selectors", systemImage: "checklist")
                 }
                 .tag(Tab.selectors)
+            SymbolsView()
+                .tabItem {
+                    Label("Symbols", systemImage: "apple.logo")
+                }
+                .tag(Tab.symbols)
+            StatesView()
+                .tabItem {
+                    Label("States", systemImage: "checkmark.circle.trianglebadge.exclamationmark")
+                }
+                .tag(Tab.states)
+            MenuView()
+                .tabItem {
+                    Label("Menus", systemImage: "filemenu.and.selection")
+                }
+                .tag(Tab.menus)
+            InputView()
+                .tabItem {
+                    Label("Inputs", systemImage: "rectangle.and.pencil.and.ellipsis")
+                }
+                .tag(Tab.input)
             ListsView()
                 .tabItem {
                     Label("Lists", systemImage: "list.bullet.rectangle")
                 }
                 .tag(Tab.lists)
+            LoadView()
+                .tabItem {
+                    Label("Load", systemImage: "arrow.clockwise.icloud")
+                }
+                .tag(Tab.load)
+
         }
     }
 }
