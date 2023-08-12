@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5E668DF2A878A9E000FE2BF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668DE2A878A9E000FE2BF /* View+Extension.swift */; };
+		F5E668E12A87D525000FE2BF /* NativeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E02A87D525000FE2BF /* NativeColor.swift */; };
+		F5E668E32A88A140000FE2BF /* PopupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E22A88A140000FE2BF /* PopupsView.swift */; };
+		F5E668E52A88AD84000FE2BF /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E42A88AD84000FE2BF /* LegendView.swift */; };
+		F5E668E72A8A15C7000FE2BF /* HapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E62A8A15C7000FE2BF /* HapticsView.swift */; };
+		F5E668F02A8A1CDA000FE2BF /* Heartbeat.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668E92A8A1CDA000FE2BF /* Heartbeat.ahap */; };
+		F5E668F12A8A1CDA000FE2BF /* Rumble.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EA2A8A1CDA000FE2BF /* Rumble.ahap */; };
+		F5E668F22A8A1CDA000FE2BF /* Oscillate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EB2A8A1CDA000FE2BF /* Oscillate.ahap */; };
+		F5E668F32A8A1CDA000FE2BF /* Boing.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EC2A8A1CDA000FE2BF /* Boing.ahap */; };
+		F5E668F42A8A1CDA000FE2BF /* Drums.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5E668ED2A8A1CDA000FE2BF /* Drums.wav */; };
+		F5E668F52A8A1CDA000FE2BF /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EE2A8A1CDA000FE2BF /* Inflate.ahap */; };
+		F5E668F62A8A1CDA000FE2BF /* Drums.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EF2A8A1CDA000FE2BF /* Drums.ahap */; };
+		F5E668F82A8A1FE2000FE2BF /* SwitchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668F72A8A1FE2000FE2BF /* SwitchesView.swift */; };
 		F5FA0FD42A84DF7F00260BA5 /* HHLUXPrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FD32A84DF7F00260BA5 /* HHLUXPrototypeApp.swift */; };
 		F5FA0FD62A84DF7F00260BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FD52A84DF7F00260BA5 /* ContentView.swift */; };
 		F5FA0FD82A84DF8000260BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5FA0FD72A84DF8000260BA5 /* Assets.xcassets */; };
@@ -30,6 +43,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F5E668DE2A878A9E000FE2BF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		F5E668E02A87D525000FE2BF /* NativeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeColor.swift; sourceTree = "<group>"; };
+		F5E668E22A88A140000FE2BF /* PopupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupsView.swift; sourceTree = "<group>"; };
+		F5E668E42A88AD84000FE2BF /* LegendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegendView.swift; sourceTree = "<group>"; };
+		F5E668E62A8A15C7000FE2BF /* HapticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsView.swift; sourceTree = "<group>"; };
+		F5E668E92A8A1CDA000FE2BF /* Heartbeat.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeat.ahap; sourceTree = "<group>"; };
+		F5E668EA2A8A1CDA000FE2BF /* Rumble.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Rumble.ahap; sourceTree = "<group>"; };
+		F5E668EB2A8A1CDA000FE2BF /* Oscillate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Oscillate.ahap; sourceTree = "<group>"; };
+		F5E668EC2A8A1CDA000FE2BF /* Boing.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Boing.ahap; sourceTree = "<group>"; };
+		F5E668ED2A8A1CDA000FE2BF /* Drums.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drums.wav; sourceTree = "<group>"; };
+		F5E668EE2A8A1CDA000FE2BF /* Inflate.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Inflate.ahap; sourceTree = "<group>"; };
+		F5E668EF2A8A1CDA000FE2BF /* Drums.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Drums.ahap; sourceTree = "<group>"; };
+		F5E668F72A8A1FE2000FE2BF /* SwitchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchesView.swift; sourceTree = "<group>"; };
 		F5FA0FD02A84DF7F00260BA5 /* HHLUXPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHLUXPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5FA0FD32A84DF7F00260BA5 /* HHLUXPrototypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLUXPrototypeApp.swift; sourceTree = "<group>"; };
 		F5FA0FD52A84DF7F00260BA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5E668E82A8A1CB4000FE2BF /* AHAP */ = {
+			isa = PBXGroup;
+			children = (
+				F5E668EC2A8A1CDA000FE2BF /* Boing.ahap */,
+				F5E668EF2A8A1CDA000FE2BF /* Drums.ahap */,
+				F5E668ED2A8A1CDA000FE2BF /* Drums.wav */,
+				F5E668E92A8A1CDA000FE2BF /* Heartbeat.ahap */,
+				F5E668EE2A8A1CDA000FE2BF /* Inflate.ahap */,
+				F5E668EB2A8A1CDA000FE2BF /* Oscillate.ahap */,
+				F5E668EA2A8A1CDA000FE2BF /* Rumble.ahap */,
+			);
+			path = AHAP;
+			sourceTree = "<group>";
+		};
 		F5FA0FC72A84DF7F00260BA5 = {
 			isa = PBXGroup;
 			children = (
@@ -95,12 +135,16 @@
 				F5FA0FE42A84E25F00260BA5 /* CtaView.swift */,
 				F5FA0FF22A850BCD00260BA5 /* ListsView.swift */,
 				F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */,
+				F5E668F72A8A1FE2000FE2BF /* SwitchesView.swift */,
 				F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */,
 				F5FA0FF62A85996200260BA5 /* InputView.swift */,
 				F5FA0FF82A8599EB00260BA5 /* StatesView.swift */,
+				F5E668E22A88A140000FE2BF /* PopupsView.swift */,
 				F5FA10032A861F4C00260BA5 /* LoadView.swift */,
 				F5FA10052A86293500260BA5 /* LoadViewModel.swift */,
+				F5E668E62A8A15C7000FE2BF /* HapticsView.swift */,
 				F5FA0FD72A84DF8000260BA5 /* Assets.xcassets */,
+				F5E668E82A8A1CB4000FE2BF /* AHAP */,
 				F5FA0FD92A84DF8000260BA5 /* HHLUXPrototype.entitlements */,
 				F5FA0FDA2A84DF8000260BA5 /* Preview Content */,
 			);
@@ -120,6 +164,8 @@
 			children = (
 				F5FA0FE92A84E77400260BA5 /* AppSettings.swift */,
 				F5FA0FEB2A84E87700260BA5 /* URL+Extension.swift */,
+				F5E668DE2A878A9E000FE2BF /* View+Extension.swift */,
+				F5E668E02A87D525000FE2BF /* NativeColor.swift */,
 				F5FA10012A85A72400260BA5 /* ButtonStyles.swift */,
 			);
 			path = Helpers;
@@ -131,6 +177,7 @@
 				F5FA0FFD2A859BBE00260BA5 /* FloatingError.swift */,
 				F5FA0FFA2A859B0F00260BA5 /* FloatingTextField.swift */,
 				F5FA0FFF2A859BF000260BA5 /* SecureTextFieldWithReveal.swift */,
+				F5E668E42A88AD84000FE2BF /* LegendView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -193,8 +240,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E668F42A8A1CDA000FE2BF /* Drums.wav in Resources */,
 				F5FA0FDC2A84DF8000260BA5 /* Preview Assets.xcassets in Resources */,
 				F5FA0FEE2A84E9DE00260BA5 /* symbol_names.txt in Resources */,
+				F5E668F62A8A1CDA000FE2BF /* Drums.ahap in Resources */,
+				F5E668F52A8A1CDA000FE2BF /* Inflate.ahap in Resources */,
+				F5E668F32A8A1CDA000FE2BF /* Boing.ahap in Resources */,
+				F5E668F02A8A1CDA000FE2BF /* Heartbeat.ahap in Resources */,
+				F5E668F12A8A1CDA000FE2BF /* Rumble.ahap in Resources */,
+				F5E668F22A8A1CDA000FE2BF /* Oscillate.ahap in Resources */,
 				F5FA0FD82A84DF8000260BA5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5FA0FF12A84F7CA00260BA5 /* MenuView.swift in Sources */,
+				F5E668E72A8A15C7000FE2BF /* HapticsView.swift in Sources */,
+				F5E668F82A8A1FE2000FE2BF /* SwitchesView.swift in Sources */,
 				F5FA0FD62A84DF7F00260BA5 /* ContentView.swift in Sources */,
 				F5FA0FD42A84DF7F00260BA5 /* HHLUXPrototypeApp.swift in Sources */,
 				F5FA0FF92A8599EB00260BA5 /* StatesView.swift in Sources */,
@@ -215,6 +271,7 @@
 				F5FA0FE32A84E24E00260BA5 /* SymbolsView.swift in Sources */,
 				F5FA0FF32A850BCD00260BA5 /* ListsView.swift in Sources */,
 				F5FA0FFB2A859B0F00260BA5 /* FloatingTextField.swift in Sources */,
+				F5E668E32A88A140000FE2BF /* PopupsView.swift in Sources */,
 				F5FA0FEA2A84E77400260BA5 /* AppSettings.swift in Sources */,
 				F5FA0FF72A85996200260BA5 /* InputView.swift in Sources */,
 				F5FA10072A86660B00260BA5 /* LoadViewModel.swift in Sources */,
@@ -222,6 +279,9 @@
 				F5FA10002A859BF000260BA5 /* SecureTextFieldWithReveal.swift in Sources */,
 				F5FA0FE52A84E25F00260BA5 /* CtaView.swift in Sources */,
 				F5FA10022A85A72400260BA5 /* ButtonStyles.swift in Sources */,
+				F5E668DF2A878A9E000FE2BF /* View+Extension.swift in Sources */,
+				F5E668E12A87D525000FE2BF /* NativeColor.swift in Sources */,
+				F5E668E52A88AD84000FE2BF /* LegendView.swift in Sources */,
 				F5FA0FEC2A84E87700260BA5 /* URL+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +432,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -412,6 +474,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

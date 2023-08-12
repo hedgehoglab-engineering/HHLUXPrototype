@@ -24,7 +24,7 @@ struct StatesView: View {
             }
             Section("Loading") {
                 HStack (spacing: 10) {
-                    Button("I was pressed and am now disabled wile loading") {
+                    Button("I was pressed and am now disabled while loading") {
                     }
                     .buttonStyle(.standardPrimaryDisabled)
                     ProgressView()

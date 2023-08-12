@@ -35,17 +35,15 @@ struct SymbolsView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            settings
-                .padding(.horizontal)
-            ScrollView {
-                LazyVStack (alignment: .leading) {
-                    iconslist
-                }
-            }
-            .navigationViewStyle(.stack)
+        settings
+            .colorMultiply(.blue.mix(with: .white, amount: 0.5))
             .padding(.horizontal)
+        ScrollView {
+            LazyVStack (alignment: .leading) {
+                iconslist
+            }
         }
+        .padding(.horizontal)
         .searchable(text: $searchText, prompt: "Search")
     }
 
@@ -98,6 +96,6 @@ struct SymbolsView: View {
 
 struct SymbolsView_Previews: PreviewProvider {
     static var previews: some View {
-        SymbolsView()
+        NavigationStack { SymbolsView()}
     }
 }

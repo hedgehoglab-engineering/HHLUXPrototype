@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct InputView: View {
+    @State var text = "This is a multiline textfield that is configured for content to scroll vertically, it can be configured with a minimum and maximum line limit, this one for example is set to 8-80"
+    @State var textSingle = "This is a single line textfield that is configured for content to scroll horizontally "
+
     var body: some View {
-        List {
-            Section("Empty state") {
-                FloatingTextField(title: "Username placeholder", text: .constant(""), error: .constant(""))
+        VStack {
+            List {
+                Section("Standard single line, .horizontal") {
+                    TextField("", text: $textSingle, axis: .horizontal)
+                }
+                Section("Standard multiline, .vertical") {
+                    TextField("", text: $text, axis: .vertical)
+                        .lineLimit(8...80)
+                }
             }
-            Section("Ready state") {
-                FloatingTextField(title: "Username", text: .constant("something"), error: .constant(""))
+            .listStyle(.sidebar)
+            List {
+                Section("Custom vertical one line field, empty state") {
+                    FloatingTextField(title: "Username placeholder", text: .constant(""), error: .constant(""))
+                }
+                .listRowBackground(Color.clear)
+                Section("Custom vertical one line field, Ready state") {
+                    FloatingTextField(title: "Username", text: .constant("something"), error: .constant(""))
+                }
+                .listRowBackground(Color.clear)
+                Section("Custom vertical one line field, Error state") {
+                    FloatingTextField(title: "Username", text: .constant("invalid"), error: .constant("some error"))
+                }
+                .listRowBackground(Color.clear)
             }
-            Section("Error state") {
-                FloatingTextField(title: "Username", text: .constant("invalid"), error: .constant("some error"))
-            }
+            .listStyle(.sidebar)
         }
 
     }

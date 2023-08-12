@@ -26,14 +26,14 @@ struct StandardButtonStyle: ButtonStyle {
 extension ButtonStyle where Self == StandardButtonStyle {
     static var standardPrimary: StandardButtonStyle {
         StandardButtonStyle(
-            backgroundColor: .blue,
+            backgroundColor: .blue.mix(with: .white, amount: 0.5),
             foregroundColor: .white,
             font: .body)
     }
     static var standardPrimaryDisabled: StandardButtonStyle {
         StandardButtonStyle(
-            backgroundColor: .blue,
-            foregroundColor: .secondary,
+            backgroundColor: .gray.mix(with: .white, amount: 0.8),
+            foregroundColor: .gray.mix(with: .white, amount: 0.5),
             font: .body)
     }
 }

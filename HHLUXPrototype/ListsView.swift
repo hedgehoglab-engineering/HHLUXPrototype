@@ -8,34 +8,88 @@
 import SwiftUI
 
 struct ListsView: View {
+
+    @State private var legend = LegendView()
+
+    @ViewBuilder func makeLegend(label: String, types: [LegendView.Types] = [.style, .color]) -> some View {
+        legend.makeLegend(label: "List with "+label, types: types)
+    }
+
     var body: some View {
-            VStack {
-                Text("Default list")
+        List {
+            Section (header: makeLegend(label: "no sections")) {
                 List {
                     Text("one")
                     Text("two")
                 }
-                Text("List with sections")
-                List {
-                    Section("section one") {
-                        Text("one")
-                    }
-                    Section("section two") {
-                        Text("two")
-                    }
-                }
-                Text("List with sections grouped")
-                List {
-                    Section("section one") {
-                        Text("one")
-                    }
-                    Section("section two") {
-                        Text("two")
-                    }
-                }
-                .listStyle(.grouped)
+                .frame(height: 150)
+                .listRowBackground(Color.clear)
             }
-            .padding()
+            Section (header: makeLegend(label: "no sections plain")) {
+                List {
+                    Text("one")
+                    Text("two")
+                }
+                .listStyle(.plain)
+                .frame(height: 150)
+                .listRowBackground(Color.clear)
+            }
+            Section (header: makeLegend(label: "sections")) {
+                List {
+                    Section("section one") {
+                        Text("one")
+                    }
+                    Section("section two") {
+                        Text("two")
+                    }
+                }
+                .listStyle(.insetGrouped)
+                .frame(height: 200)
+                .listRowBackground(Color.clear)
+            }
+            Section (header: makeLegend(label: "collapsable sections")) {
+                List {
+                    Section("section one") {
+                        Text("1.1")
+                        Text("1.2")
+                    }
+                    Section("section two") {
+                        Text("2.1")
+                        Text("2.2")
+                    }
+                }
+                .listStyle(.sidebar)
+                .frame(height: 300)
+                .listRowBackground(Color.clear)
+            }
+            Section (header: makeLegend(label: "inset sections")) {
+                List {
+                    Section("section one") {
+                        Text("one")
+                    }
+                    Section("section two") {
+                        Text("two")
+                    }
+                }
+                .listStyle(.inset)
+                .frame(height: 200)
+                .listRowBackground(Color.clear)
+            }
+            Section (header: makeLegend(label: "plain sections")) {
+                List {
+                    Section("section one") {
+                        Text("one")
+                    }
+                    Section("section two") {
+                        Text("two")
+                    }
+                }
+                .listStyle(.plain)
+                .frame(height: 200)
+                .listRowBackground(Color.clear)
+            }
+        }
+        .listStyle(.sidebar)
     }
 }
 

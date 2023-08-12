@@ -5,7 +5,8 @@ Abstract:
 Saving and Loading App defaults from file
 */
 
-import Foundation
+import UIKit
+
 
 struct AppDefaults: Codable, Equatable {
     var name: String

@@ -10,12 +10,102 @@ import SwiftUI
 struct SelectorsView: View {
 
     @State private var selector = 0
-    @State private var isShowingPop = false
-    @State private var isShowingSheet = false
-    @State private var isShowingDialog = false
+    @State private var isShowingLabels = true
+    @State private var isColored = false
+
+    @State private var legend = LegendView()
+
+    var wheelLegend: some View {
+        let label = "Wheel selector"
+        let types: [LegendView.Types] = [.style, .scale]
+        return legend.makeLegend(label: label, types: types)
+    }
+
+    var inlineLegend: some View {
+        let label = "Inline selector"
+        let types: [LegendView.Types] = [.style, .scale, .label]
+        return legend.makeLegend(label: label, types: types)
+    }
+
+    var segmentedLegend: some View {
+        let label = "Segmented selector"
+        let types: [LegendView.Types] = [.color, .style, .scale]
+        return legend.makeLegend(label: label, types: types)
+    }
+
+    var navigationLegend: some View {
+        let label = "Navigation selector"
+        let types: [LegendView.Types] = [.style, .scale]
+        return legend.makeLegend(label: label, types: types)
+    }
+
+    var menuLegend: some View {
+        let label = "Menu selector"
+        let types: [LegendView.Types] = [.style, .scale, .label]
+        return legend.makeLegend(label: label, types: types)
+    }
+
+    var body: some View {
+        NavigationStack {
+            VStack {
+                settings
+                .padding(.horizontal)
+                form
+                .ifModifier(!isShowingLabels) { view in
+                    view.labelsHidden()
+                }
+            }
+        }
+    }
+
+    var form: some View {
+        List {
+            Section (header: inlineLegend) {
+                inline
+                    .ifModifier(isColored) { view in
+                        view.colorMultiply(.orange)
+                    }
+            }
+            Section (header: segmentedLegend) {
+                segmented
+                    .ifModifier(isColored) { view in
+                        view.colorMultiply(.orange)
+                    }
+            }
+            Section (header: wheelLegend) {
+                wheel
+                    .ifModifier(isColored) { view in
+                        view.colorMultiply(.orange)
+                    }
+                    .frame(height: 100)
+
+            }
+            Section (header: menuLegend) {
+                menu
+                    .ifModifier(isColored) { view in
+                        view.colorMultiply(.orange)
+                    }
+            }
+            Section (header: navigationLegend) {
+                navigation
+                    .ifModifier(isColored) { view in
+                        view.colorMultiply(.orange)
+                    }
+            }
+        }
+        .listStyle(.sidebar)
+    }
+
+    var settings: some View {
+        HStack (spacing: 60) {
+            Toggle("Show labels", isOn: $isShowingLabels)
+            Toggle("Color overlay", isOn: $isColored)
+        }
+        .tint(.blue.mix(with: .white, amount: 0.5))
+    }
 
     var inline: some View {
-        Picker(selection: $selector, label: Text("Inline")) {
+        Picker(selection: $selector, label: Text("Label")) {
             Text("Thin").tag(0)
             Text("Regular").tag(1)
             Text("Bold").tag(2)
@@ -24,7 +114,7 @@ struct SelectorsView: View {
     }
 
     var wheel: some View {
-        Picker(selection: $selector, label: Text("Wheel")) {
+        Picker(selection: $selector, label: Text("Label")) {
             Text("Thin").tag(0)
             Text("Regular").tag(1)
             Text("Bold").tag(2)
@@ -32,67 +122,34 @@ struct SelectorsView: View {
         .pickerStyle(.wheel)
     }
 
-    var body: some View {
-        NavigationStack {
-            Form {
-                wheel
-                inline
-                Picker(selection: $selector, label: Text("Segmented")) {
-                    Text("Thin").tag(0)
-                    Text("Regular").tag(1)
-                    Text("Bold").tag(2)
-                }
-                .pickerStyle(.segmented)
-                Section {
-                    Picker(selection: $selector, label: Text("Navigation")) {
-                        Text("Thin").tag(0)
-                        Text("Regular").tag(1)
-                        Text("Bold").tag(2)
-                    }
-                    .pickerStyle(.navigationLink)
-                }
-                Picker(selection: $selector, label: Text("Menu")) {
-                    Text("Thin").tag(0)
-                    Text("Regular").tag(1)
-                    Text("Bold").tag(2)
-                }
-                .pickerStyle(.menu)
-                Section {
-                    Button("Modal") {
-                        isShowingPop.toggle()
-                    }
-                    .sheet(isPresented: $isShowingPop) {
-                        Form {
-                            wheel
-                        }
-                    }
-                    Button("Sheet") {
-                        isShowingSheet.toggle()
-                    }
-                    .sheet(isPresented: $isShowingSheet) {
-                        Form {
-                            wheel
-                        }
-                        .presentationDetents([.medium, .large])
-                    }
-                    Button("Dialog") {
-                        isShowingDialog.toggle()
-                    }
-                    .confirmationDialog("Dialog", isPresented: $isShowingDialog, titleVisibility: .visible) {
-                        Button("Thin") {
-                            selector = 0
-                        }
-                        Button("Regular") {
-                            selector = 1
-                        }
-                        Button("Bold") {
-                            selector = 2
-                        }
-                    }
-                }
-            }
+    var segmented: some View {
+        Picker(selection: $selector, label: Text("Label")) {
+            Text("Thin").tag(0)
+            Text("Regular").tag(1)
+            Text("Bold").tag(2)
         }
+        .pickerStyle(.segmented)
     }
+
+    var navigation: some View {
+        Picker(selection: $selector, label: Text("Label (always shown)")) {
+            Text("Thin").tag(0)
+            Text("Regular").tag(1)
+            Text("Bold").tag(2)
+        }
+        .pickerStyle(.navigationLink)
+    }
+
+    var menu: some View {
+        Picker(selection: $selector, label: Text("Label")) {
+            Text("Thin").tag(0)
+            Text("Regular").tag(1)
+            Text("Bold").tag(2)
+        }
+        .pickerStyle(.menu)
+    }
+
+
 }
 
 struct SelectorsView_Previews: PreviewProvider {

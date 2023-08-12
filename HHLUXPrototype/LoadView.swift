@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoadView: View {
 
-    @ObservedObject var viewModel = LoadViewModel(source: LoadViewSource(), threshold: 1, pageSize: 10)
+    @ObservedObject var viewModel = LoadViewModel(source: LoadViewSource(), threshold: 1, pageSize: 1)
 
     var body: some View {
         ScrollView {
@@ -19,36 +19,29 @@ struct LoadView: View {
                         viewModel.onItemAppear(item)
                     }
             }
+            if viewModel.state != .loaded {
+                paginationLoader
+            }
         }
-        .refreshable { await viewModel.fetchAll() }
-//        let index = page * 10
-//        return ForEach(1..<index, id: \.self) { _ in
-//            CtaView()
-//        }
+        .refreshable {
+            await viewModel.fetchAll()
+        }
+        .task {
+            await viewModel.loadMoreItems()
+        }
     }
 
-    var loader: some View {
+    var paginationLoader: some View {
         LazyVStack(spacing: 12) {
-            paginationLoader
+            HStack {
+                Spacer()
+                ProgressView()
+                    .progressViewStyle(.circular)
+                Spacer()
+            }
             Spacer(minLength: 12)
         }
         .padding(12)
-    }
-
-    private var paginationLoader: some View {
-        HStack {
-            Spacer()
-            ProgressView()
-                .progressViewStyle(.circular)
-                .task {
-                    do {
-                        try await viewModel.fetchNextIfNeeded()
-                    } catch {
-                        print(error)
-                    }
-                }
-            Spacer()
-        }
     }
 
 }

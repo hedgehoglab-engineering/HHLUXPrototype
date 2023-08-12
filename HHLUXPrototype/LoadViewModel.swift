@@ -10,15 +10,14 @@ import Foundation
 
 struct PageModel: Identifiable, Hashable {
     var id: String = UUID().uuidString
-
 }
 
 struct LoadViewSource: Pageable {
     typealias Value = PageModel
 
     func loadPage(after currentPage: PageInfo, size: Int) async throws -> (items: [Value], info: PageInfo) {
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
-        let items = [PageModel(), PageModel(), PageModel(), PageModel(), PageModel()]
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        let items = [PageModel(), PageModel()]
         let info = PageInfo.default
         return (items: items, info: info)
     }
@@ -57,12 +56,6 @@ public final class LoadViewModel<T: Pageable>: ObservableObject {
         self.threshold = threshold
         self.pageSize = pageSize
 
-
-        Task {
-            let info = PageInfo(hasNextPage: true, endCursor: nil)
-            let (items, _) = try! await source.loadPage(after: info, size: 10)
-            self.items = items
-        }
     }
 
     private var canLoadMorePages: Bool { pageInfo.hasNextPage }
@@ -77,14 +70,13 @@ public final class LoadViewModel<T: Pageable>: ObservableObject {
         }
     }
 
-    func fetchNextIfNeeded() async throws {
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
-    //        try await backendRequest(page: page)
-    }
-
     func fetchAll() async {
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
-    //        try await backendRequest(page: page)
+        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.items = [items.first!]
+            self.state = .loaded
+        }
     }
 
     public func onItemAppear(_ model: T.Value) {
