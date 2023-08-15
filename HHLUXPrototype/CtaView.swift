@@ -11,6 +11,8 @@ import Combine
 
 struct CtaView: View {
 
+    @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
+
     @State private var timerValue = 0.0
     @State private var selectedColor = Color.red
     @State private var colors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple, .cyan, .indigo, .mint, .pink]
@@ -95,9 +97,9 @@ struct CtaView: View {
     var progress: some View {
         VStack {
             Spacer()
-            ProgressView(value: timerValue, total: 10)
+            ProgressView(value: timerValue, total: Double(10 * backend.delayValue))
                 .onReceive(timer) { _ in
-                    if timerValue < 10 {
+                    if timerValue < Double(10 * backend.delayValue) {
                         timerValue += 1
                     }
                 }
@@ -189,7 +191,7 @@ class FavoriteItem: ObservableObject {
         isFailed = backend.willFail || backend.willTimeout
         isDisabled = true
         if backend.willTimeout { return }
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        try? await Task.sleep(nanoseconds: UInt64(backend.delayValue * 1_000_000_000))
         withAnimation(.easeIn) {
             isDisabled = false
             isFailed = backend.willFail || backend.willTimeout
@@ -204,9 +206,8 @@ class FavoriteItem: ObservableObject {
     func heartTapSpammable() async {
         isFailed = backend.willFail || backend.willTimeout
         if backend.willTimeout { return }
-        try? await Task.sleep(nanoseconds: 1_000_000_000)
+        try? await Task.sleep(nanoseconds: UInt64(backend.delayValue * 1_000_000_000))
         withAnimation(.easeIn) {
-            isLiked.toggle()
             isFailed = backend.willFail || backend.willTimeout
             if isFailed {
                 isLiked = false

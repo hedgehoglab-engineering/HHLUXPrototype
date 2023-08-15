@@ -46,17 +46,15 @@ struct SelectorsView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                settings
-                .padding(.horizontal)
-                form
-                .ifModifier(!isShowingLabels) { view in
-                    view.labelsHidden()
-                }
+        VStack {
+            settings
+            .padding(.horizontal)
+            form
+            .ifModifier(!isShowingLabels) { view in
+                view.labelsHidden()
             }
-            .background(Color(UIColor.secondarySystemBackground))
         }
+        .background(Color(UIColor.secondarySystemBackground))
     }
 
     var form: some View {

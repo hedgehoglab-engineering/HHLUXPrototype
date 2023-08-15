@@ -10,10 +10,18 @@ import SwiftUI
 struct MenuView: View {
 
     @State var presentEdit = false
-    @State var buttonTap = false
+
+    @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
 
     var body: some View {
         ScrollView {
+            if #available(iOS 17.0, *) {
+                menu
+                    .symbolEffect(.bounce.down, value: backend.willFail)
+                    .symbolEffect(.bounce.up, value: backend.willTimeout)
+            } else {
+                menu
+            }
             ForEach(1..<4) { _ in
                 item
                     .padding(40)
@@ -24,8 +32,16 @@ struct MenuView: View {
         }
     }
 
+    var menu: some View {
+        Menu(content: {
+            SettingsView()
+        }, label: {
+            Label("Tap for floating menu", systemImage: "hand.tap")
+        })
+    }
+
     var item: some View {
-        Text("Tap and hold for menu")
+        Text("Tap and hold for contextual menu")
             .padding(40)
             .background(Color(UIColor.secondarySystemBackground))
             .clipShape(backgroundRectangle)

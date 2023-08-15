@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct InputView: View {
+
     @State var text = "This is a multiline textfield that is configured for content to scroll vertically, it can be configured with a minimum and maximum line limit, this one for example is set to 8-80"
     @State var textSingle = "This is a single line textfield that is configured for content to scroll horizontally "
 
+    @State var typing = false
+
+    @available(iOS 17.0, *)
+    var feedback: some View {
+        Image(systemName:"rectangle.stack")
+            .symbolEffect(.bounce.byLayer, value: typing)
+    }
+
     var body: some View {
         VStack {
+            if #available(iOS 17.0, *) {
+                feedback
+            }
             List {
                 Section("Standard single line, .horizontal") {
-                    TextField("", text: $textSingle, axis: .horizontal)
+                    TextField("", text: $textSingle) {
+                        typing = $0
+                    }
                 }
                 Section("Standard multiline, .vertical") {
                     TextField("", text: $text, axis: .vertical)
@@ -39,8 +53,10 @@ struct InputView: View {
             }
             .listStyle(.sidebar)
         }
-
+        .background(Color(UIColor.secondarySystemBackground))
     }
+
+
 }
 
 struct InputView_Previews: PreviewProvider {

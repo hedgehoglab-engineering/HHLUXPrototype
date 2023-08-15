@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F53271BC2A8B7A150053324A /* CtaViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BB2A8B7A150053324A /* CtaViewList.swift */; };
 		F53271BE2A8B88EC0053324A /* SimulatedBackendSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */; };
+		F53271C02A8BB29C0053324A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BF2A8BB29C0053324A /* SettingsView.swift */; };
 		F5E668DF2A878A9E000FE2BF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668DE2A878A9E000FE2BF /* View+Extension.swift */; };
 		F5E668E12A87D525000FE2BF /* NativeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E02A87D525000FE2BF /* NativeColor.swift */; };
 		F5E668E32A88A140000FE2BF /* PopupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E22A88A140000FE2BF /* PopupsView.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		F53271BB2A8B7A150053324A /* CtaViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtaViewList.swift; sourceTree = "<group>"; };
 		F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedBackendSingleton.swift; sourceTree = "<group>"; };
+		F53271BF2A8BB29C0053324A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F5E668DE2A878A9E000FE2BF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F5E668E02A87D525000FE2BF /* NativeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeColor.swift; sourceTree = "<group>"; };
 		F5E668E22A88A140000FE2BF /* PopupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupsView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				F5FA10032A861F4C00260BA5 /* LoadView.swift */,
 				F5FA10052A86293500260BA5 /* LoadViewModel.swift */,
 				F5E668E62A8A15C7000FE2BF /* HapticsView.swift */,
+				F53271BF2A8BB29C0053324A /* SettingsView.swift */,
 				F5FA0FD72A84DF8000260BA5 /* Assets.xcassets */,
 				F5E668E82A8A1CB4000FE2BF /* AHAP */,
 				F5FA0FD92A84DF8000260BA5 /* HHLUXPrototype.entitlements */,
@@ -291,6 +294,7 @@
 				F5E668E52A88AD84000FE2BF /* LegendView.swift in Sources */,
 				F5FA0FEC2A84E87700260BA5 /* URL+Extension.swift in Sources */,
 				F53271BE2A8B88EC0053324A /* SimulatedBackendSingleton.swift in Sources */,
+				F53271C02A8BB29C0053324A /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +417,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HHLUXPrototype/HHLUXPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"HHLUXPrototype/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ES3P3AL8G;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -455,7 +459,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HHLUXPrototype/HHLUXPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"HHLUXPrototype/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ES3P3AL8G;
 				ENABLE_HARDENED_RUNTIME = YES;

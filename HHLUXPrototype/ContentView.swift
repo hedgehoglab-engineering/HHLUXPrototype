@@ -18,20 +18,89 @@ struct ContentView: View {
 
     @State private var selection: Int?
 
+    @State private var searchText = ""
+
+    @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
+
     var body: some View {
         Group {
             NavigationSplitView(columnVisibility: $columnVisibility) {
-                sidebarList
-                    .navigationTitle("HHLUXPrototype")
+                VStack {
+                    sidebarList
+                    Spacer()
+                    footer
+                    Spacer()
+                }
+                .background(Color(UIColor.systemGroupedBackground))
+                .navigationTitle("HHLUXPrototype")
+                .navigationSplitViewStyle(.balanced)
+                .navigationBarTitleDisplayMode(.inline)
             } detail: {
 
             }
         }
-        .navigationSplitViewStyle(.balanced)
+        .ifModifier(backend.lightMode) { view in
+            view.colorScheme(.light)
+        }
+        .onAppear {
+            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont.systemFont(ofSize: 20, weight: .ultraLight)]
+            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize:34, weight: .ultraLight)]
+        }
+//        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
     }
+
+    func determineGearIcon() -> String {
+        let hour = Calendar.current.component(.hour, from: Date())
+        
+        if hour >= 0 && hour < 12 {
+            return "gearshape"
+        } else if hour >= 12 && hour < 17 {
+            return "gear"
+        } else {
+            return "gearshape.2"
+        }
+    }
+
+    var footer: some View {
+        VStack {
+            settingsMenu
+            .padding()
+            Text("Copyright 2023 hedgehog lab")
+        }
+        .foregroundColor(.black.mix(with: .white, amount: 0.7))
+        .shadow(color: .white, radius: 0.1, x: 0, y: 1)
+        .font(.caption)
+    }
+
+    var settingsMenu: some View {
+        Menu(content: {
+            SettingsView()
+        }, label: {
+            Label("Settings", systemImage: determineGearIcon())
+        })
+    }
+
 
     var sidebarList: some View {
         List (selection: $selection) {
+            Section {
+                sidebarList1
+            }
+            Section {
+                sidebarList2
+            }
+            Section {
+                NavigationLink {
+                    SymbolsView()
+                } label: {
+                    Label("Symbols", systemImage: "apple.logo")
+                }
+            }
+        }
+    }
+
+    var sidebarList1: some View {
+        Group {
             NavigationLink {
                 CtaViewList()
             } label: {
@@ -50,7 +119,7 @@ struct ContentView: View {
             NavigationLink {
                 InputView()
             } label: {
-                Label("TextInputs", systemImage: "rectangle.and.pencil.and.ellipsis")
+                Label("Text input", systemImage: "rectangle.and.pencil.and.ellipsis")
             }
             NavigationLink {
                 PopupsView()
@@ -63,35 +132,29 @@ struct ContentView: View {
                 Label("Lists", systemImage: "list.bullet.rectangle")
             }
             NavigationLink {
-                LoadView()
-            } label: {
-                Label("Loading", systemImage: "arrow.clockwise.icloud")
-            }
-            sidebarList1
-        }
-    }
-
-    var sidebarList1: some View {
-        Group {
-            NavigationLink {
                 MenuView()
             } label: {
                 Label("Menus", systemImage: "filemenu.and.selection")
             }
+        }
+    }
+
+    var sidebarList2: some View {
+        Group {
             NavigationLink {
                 HapticsView()
             } label: {
                 Label("Haptics", systemImage: "hand.tap")
             }
             NavigationLink {
+                LoadView()
+            } label: {
+                Label("Loading", systemImage: "arrow.clockwise.icloud")
+            }
+            NavigationLink {
                 StatesView()
             } label: {
                 Label("States", systemImage: "checkmark.circle.trianglebadge.exclamationmark")
-            }
-            NavigationLink {
-                SymbolsView()
-            } label: {
-                Label("Symbols", systemImage: "apple.logo")
             }
         }
     }

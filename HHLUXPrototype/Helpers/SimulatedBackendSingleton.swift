@@ -9,6 +9,8 @@ import SwiftUI
 
 final class SimulatedBackendSingleton: NSObject, ObservableObject {
 
+    @Published var lightMode = true
+
     @Published var willFail = false {
         willSet {
             if newValue {
@@ -16,6 +18,7 @@ final class SimulatedBackendSingleton: NSObject, ObservableObject {
             }
         }
     }
+
     @Published var willTimeout = false {
         willSet {
             if newValue {
@@ -23,6 +26,8 @@ final class SimulatedBackendSingleton: NSObject, ObservableObject {
             }
         }
     }
+
+    @Published var delayValue = 1
 
     static let sharedInstance = SimulatedBackendSingleton()
 

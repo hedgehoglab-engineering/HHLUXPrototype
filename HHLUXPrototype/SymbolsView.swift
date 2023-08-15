@@ -48,8 +48,7 @@ struct SymbolsView: View {
     }
 
     var iconslist: some View {
-
-        return ForEach(searchResults, id: \.self) { element in
+        ForEach(searchResults, id: \.self) { element in
             HStack (alignment: .center) {
                 Image(systemName: element)
                     .symbolRenderingMode(multicolor ? .multicolor : .monochrome)

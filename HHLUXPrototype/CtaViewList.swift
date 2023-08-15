@@ -15,13 +15,13 @@ struct CtaViewList: View {
 
     var body: some View {
         Form {
+            explaination
             VStack {
                 Toggle("Simulate backend failure", isOn: $backend.willFail)
                 Toggle("Simulate backend timeout", isOn: $backend.willTimeout)
             }
             .tint(.blue.mix(with: .white, amount: 0.5))
             .listRowBackground(Color.clear)
-            explaination
             Section (header: sectionLegend){
                 List {
                     ForEach(1..<6) { _ in
@@ -44,6 +44,7 @@ struct CtaViewList: View {
         VStack (alignment: .leading) {
             HStack {
                 Image(systemName: "heart")
+
                 Text("- standard button with no state feedback (spammable)")
             }
             HStack {
