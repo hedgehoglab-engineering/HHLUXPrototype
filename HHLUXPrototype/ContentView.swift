@@ -33,6 +33,11 @@ struct ContentView: View {
     var sidebarList: some View {
         List (selection: $selection) {
             NavigationLink {
+                CtaViewList()
+            } label: {
+                Label("Buttons", systemImage: "rectangle.and.hand.point.up.left")
+            }
+            NavigationLink {
                 SelectorsView()
             } label: {
                 Label("Selectors", systemImage: "checklist")
@@ -79,11 +84,6 @@ struct ContentView: View {
                 Label("Haptics", systemImage: "hand.tap")
             }
             NavigationLink {
-                cta
-            } label: {
-                Label("Feedback", systemImage: "rectangle.and.hand.point.up.left")
-            }
-            NavigationLink {
                 StatesView()
             } label: {
                 Label("States", systemImage: "checkmark.circle.trianglebadge.exclamationmark")
@@ -96,33 +96,6 @@ struct ContentView: View {
         }
     }
 
-    var cta: some View {
-        Form {
-            List {
-                ForEach(1..<7) { _ in
-                    CtaView()
-                }
-            }
-            HStack {
-                Image(systemName: "heart")
-                Text("- standard button with no state feedback (spammable)")
-            }
-            HStack {
-                Image(systemName: "moon")
-                Text("- button with slight blur on tap (non spammable)")
-            }
-            HStack {
-                Image(systemName: "star")
-                Text("- button with blur and scaling on tap (non spammable)")
-            }
-            HStack {
-                Image(systemName: "sun.max")
-                Text("- button with haptic feedback and progress bar (non spammable)")
-            }
-        }
-        .font(.caption)
-        .foregroundColor(.secondary)
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -31,6 +31,12 @@ struct LegendView: View {
             }
             Spacer()
         }
+        .sheet(isPresented: $isShowingLegend) {
+            Group {
+                legendLabel
+            }
+            .presentationDetents([.medium, .large])
+        }
     }
 
     var body: some View {
@@ -40,15 +46,14 @@ struct LegendView: View {
             buttonStyle
             buttonColor
         }
-        .sheet(isPresented: $isShowingLegend) {
-            Text(legendText)
-            .presentationDetents([.medium, .large])
-        }
+    }
+
+    var legendLabel: some View {
+        Text("A textual label available for the component is fully customisable in that it can be shown/hidden")
     }
 
     var buttonLabel: some View {
         Button(action: {
-            legendText = "A textual label available for the component is fully customisable in that it can be shown/hidden"
             isShowingLegend.toggle()
         }) {
             Image(systemName: "l.square.fill")
@@ -56,9 +61,12 @@ struct LegendView: View {
         }
     }
 
+    var legendScale: some View {
+        Text("The component can be scaled")
+    }
+
     var buttonScale: some View {
         Button(action: {
-            legendText = "The component can be scaled"
             isShowingLegend.toggle()
         }) {
             Image(systemName: "square.arrowtriangle.4.outward")
@@ -66,9 +74,12 @@ struct LegendView: View {
         }
     }
 
+    var legendStyle: some View {
+        Text("Text style is fully customisable")
+    }
+
     var buttonStyle: some View {
         Button(action: {
-            legendText = "Text style is fully customisable"
             isShowingLegend.toggle()
         }) {
             Image(systemName: "textformat.size")
@@ -76,9 +87,12 @@ struct LegendView: View {
         }
     }
 
+    var legendColor: some View {
+        Text("Color is fully customisable")
+    }
+
     var buttonColor: some View {
         Button(action: {
-            legendText = "Color is fully customisable"
             isShowingLegend.toggle()
         }) {
             Image(systemName: "paintpalette.fill")

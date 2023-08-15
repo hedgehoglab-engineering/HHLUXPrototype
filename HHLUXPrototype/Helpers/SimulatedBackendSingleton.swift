@@ -1,0 +1,33 @@
+//
+//  SimulatedBackendSingleton.swift
+//  HHLUXPrototype
+//
+//  Created by vlad on 15/08/2023.
+//
+
+import SwiftUI
+
+final class SimulatedBackendSingleton: NSObject, ObservableObject {
+
+    @Published var willFail = false {
+        willSet {
+            if newValue {
+                willTimeout = false
+            }
+        }
+    }
+    @Published var willTimeout = false {
+        willSet {
+            if newValue {
+                willFail = false
+            }
+        }
+    }
+
+    static let sharedInstance = SimulatedBackendSingleton()
+
+    private override init() {
+        super.init()
+    }
+
+}

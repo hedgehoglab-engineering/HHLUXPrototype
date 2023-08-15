@@ -16,6 +16,7 @@ struct CtaView: View {
     @State private var colors: [Color] = [.red, .blue, .green, .yellow, .orange, .purple, .cyan, .indigo, .mint, .pink]
     let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
+    @ObservedObject var favorite0 = FavoriteItem(icon: "flag")
     @ObservedObject var favorite1 = FavoriteItem(icon: "heart")
     @ObservedObject var favorite2 = FavoriteItem(icon: "sun.max")
     @ObservedObject var favorite3 = FavoriteItem(icon: "star")
@@ -27,7 +28,7 @@ struct CtaView: View {
     }
 
     var body: some View {
-        HStack (spacing: 50) {
+        HStack (spacing: 30) {
             fav1
                 .environment(\.isEnabled, !favorite1.isDisabled)
             fav4
@@ -36,17 +37,36 @@ struct CtaView: View {
                 .environment(\.isEnabled, !favorite3.isDisabled)
             fav2
                 .environment(\.isEnabled, !favorite2.isDisabled)
+            if #available(iOS 17.0, *) {
+                fav0
+                    .environment(\.isEnabled, !favorite0.isDisabled)
+            }
         }
         .nonSpammable()
         .padding()
         .font(.largeTitle)
     }
 
+    @available(iOS 17.0, *)
+    var fav0: some View {
+        Image(systemName: favorite0.isDisabled ? favorite0.isFailed ? favorite0.iconFailure: favorite0.iconSuccess : favorite0.icon)
+            .onTapGesture() {
+                withAnimation {
+                    changeColor(favorite0)
+                    Task { await favorite0.heartTap() }
+                }
+            }
+            .foregroundColor(favorite0.isLiked ? selectedColor : Color.secondary)
+            .contentTransition(.symbolEffect(.replace))
+    }
+
     var fav1: some View {
         Image(systemName: favorite1.icon)
             .onTapGesture() {
-                changeColor(favorite1)
-                Task { await favorite1.heartTapSpammable() }
+                withAnimation {
+                    changeColor(favorite1)
+                    Task { await favorite1.heartTapSpammable() }
+                }
             }
             .foregroundColor(favorite1.isLiked ? selectedColor : Color.secondary)
     }
@@ -57,6 +77,7 @@ struct CtaView: View {
             .onTapGesture() {
                 changeColor(favorite2)
                 UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+//                .sensoryFeedback(.success, trigger: taskIsComplete)
                 Task {
                     await favorite2.heartTap()
                     timerValue = 0.0
@@ -149,30 +170,49 @@ struct BlurButtonStyle: ButtonStyle {
 
 @MainActor
 class FavoriteItem: ObservableObject {
+
+    @State private var backend = SimulatedBackendSingleton.sharedInstance
+
     var icon: String = ""
+    let iconSuccess: String = "checkmark"
+    let iconFailure: String = "exclamationmark.triangle"
 
     @Published var isLiked = false
     @Published var isDisabled = false
+    @Published var isFailed = false
 
-    init(icon: String, isLiked: Bool = false, isDisabled: Bool = false) {
+    init(icon: String) {
         self.icon = icon
-        self.isLiked = isLiked
-        self.isDisabled = isDisabled
     }
 
     func heartTap() async {
+        isFailed = backend.willFail || backend.willTimeout
         isDisabled = true
+        if backend.willTimeout { return }
         try? await Task.sleep(nanoseconds: 1_000_000_000)
         withAnimation(.easeIn) {
-            isLiked.toggle()
             isDisabled = false
+            isFailed = backend.willFail || backend.willTimeout
+            if isFailed {
+                isLiked = false
+            } else {
+                isLiked.toggle()
+            }
         }
     }
 
     func heartTapSpammable() async {
+        isFailed = backend.willFail || backend.willTimeout
+        if backend.willTimeout { return }
         try? await Task.sleep(nanoseconds: 1_000_000_000)
         withAnimation(.easeIn) {
             isLiked.toggle()
+            isFailed = backend.willFail || backend.willTimeout
+            if isFailed {
+                isLiked = false
+            } else {
+                isLiked.toggle()
+            }
         }
     }
 

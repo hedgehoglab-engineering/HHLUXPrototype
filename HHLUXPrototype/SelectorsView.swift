@@ -55,6 +55,7 @@ struct SelectorsView: View {
                     view.labelsHidden()
                 }
             }
+            .background(Color(UIColor.secondarySystemBackground))
         }
     }
 
@@ -97,11 +98,17 @@ struct SelectorsView: View {
     }
 
     var settings: some View {
-        HStack (spacing: 60) {
-            Toggle("Show labels", isOn: $isShowingLabels)
-            Toggle("Color overlay", isOn: $isColored)
+        VStack {
+            VStack {
+                Toggle("Show labels", isOn: $isShowingLabels)
+                Toggle("Color overlay", isOn: $isColored)
+            }
+            .font(.footnote)
+            .foregroundColor(.secondary)
+            .tint(.blue.mix(with: .white, amount: 0.5))
+            .padding()
+            Divider()
         }
-        .tint(.blue.mix(with: .white, amount: 0.5))
     }
 
     var inline: some View {
