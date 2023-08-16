@@ -47,7 +47,7 @@ struct SettingsView: View {
     }
 
     var label: some View {
-        Label("v1.0 build 5", systemImage: "app.dashed")
+        Label("v1.0 build 6", systemImage: "app.dashed")
     }
 
 }

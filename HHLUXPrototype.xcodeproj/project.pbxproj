@@ -7,6 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5043ABA2A8CC53D003E18B3 /* HHLUXAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043AB92A8CC53D003E18B3 /* HHLUXAppClipApp.swift */; };
+		F5043ABC2A8CC53D003E18B3 /* SwiftDataExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043ABB2A8CC53D003E18B3 /* SwiftDataExample.swift */; };
+		F5043ABE2A8CC53D003E18B3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043ABD2A8CC53D003E18B3 /* Item.swift */; };
+		F5043AC32A8CC53F003E18B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5043AC22A8CC53F003E18B3 /* Preview Assets.xcassets */; };
+		F5043AD02A8CC540003E18B3 /* HHLUXAppClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043ACF2A8CC540003E18B3 /* HHLUXAppClipTests.swift */; };
+		F5043ADA2A8CC540003E18B3 /* HHLUXAppClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043AD92A8CC540003E18B3 /* HHLUXAppClipUITests.swift */; };
+		F5043ADC2A8CC540003E18B3 /* HHLUXAppClipUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043ADB2A8CC540003E18B3 /* HHLUXAppClipUITestsLaunchTests.swift */; };
+		F5043ADF2A8CC540003E18B3 /* HHLUXAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = F5043AB72A8CC53D003E18B3 /* HHLUXAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F5043AEA2A8CC64A003E18B3 /* symbol_names.txt in Resources */ = {isa = PBXBuildFile; fileRef = F5FA0FED2A84E9DE00260BA5 /* symbol_names.txt */; };
+		F5043AEB2A8CC652003E18B3 /* LegendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E42A88AD84000FE2BF /* LegendView.swift */; };
+		F5043AEC2A8CC652003E18B3 /* FloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FFA2A859B0F00260BA5 /* FloatingTextField.swift */; };
+		F5043AED2A8CC652003E18B3 /* SecureTextFieldWithReveal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FFF2A859BF000260BA5 /* SecureTextFieldWithReveal.swift */; };
+		F5043AEE2A8CC652003E18B3 /* FloatingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FFD2A859BBE00260BA5 /* FloatingError.swift */; };
+		F5043AEF2A8CC659003E18B3 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA10012A85A72400260BA5 /* ButtonStyles.swift */; };
+		F5043AF02A8CC659003E18B3 /* NativeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E02A87D525000FE2BF /* NativeColor.swift */; };
+		F5043AF12A8CC659003E18B3 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FEB2A84E87700260BA5 /* URL+Extension.swift */; };
+		F5043AF22A8CC659003E18B3 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668DE2A878A9E000FE2BF /* View+Extension.swift */; };
+		F5043AF32A8CC659003E18B3 /* SimulatedBackendSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */; };
+		F5043AF42A8CC659003E18B3 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FE92A84E77400260BA5 /* AppSettings.swift */; };
+		F5043AF52A8CC667003E18B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FD52A84DF7F00260BA5 /* ContentView.swift */; };
+		F5043AF62A8CC667003E18B3 /* SymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FE22A84E24E00260BA5 /* SymbolsView.swift */; };
+		F5043AF72A8CC667003E18B3 /* CtaViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BB2A8B7A150053324A /* CtaViewList.swift */; };
+		F5043AF82A8CC667003E18B3 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF62A85996200260BA5 /* InputView.swift */; };
+		F5043AF92A8CC667003E18B3 /* PopupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E22A88A140000FE2BF /* PopupsView.swift */; };
+		F5043AFA2A8CC667003E18B3 /* LoadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA10052A86293500260BA5 /* LoadViewModel.swift */; };
+		F5043AFB2A8CC667003E18B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BF2A8BB29C0053324A /* SettingsView.swift */; };
+		F5043AFC2A8CC667003E18B3 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */; };
+		F5043AFD2A8CC667003E18B3 /* SelectorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */; };
+		F5043AFE2A8CC667003E18B3 /* CtaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FE42A84E25F00260BA5 /* CtaView.swift */; };
+		F5043AFF2A8CC667003E18B3 /* HapticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E62A8A15C7000FE2BF /* HapticsView.swift */; };
+		F5043B002A8CC667003E18B3 /* ListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF22A850BCD00260BA5 /* ListsView.swift */; };
+		F5043B012A8CC667003E18B3 /* SwitchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668F72A8A1FE2000FE2BF /* SwitchesView.swift */; };
+		F5043B022A8CC667003E18B3 /* StatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF82A8599EB00260BA5 /* StatesView.swift */; };
+		F5043B032A8CC667003E18B3 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA10032A861F4C00260BA5 /* LoadView.swift */; };
+		F5043B052A8CC680003E18B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5043ABF2A8CC53F003E18B3 /* Assets.xcassets */; };
+		F5043B062A8CC68E003E18B3 /* Heartbeat.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668E92A8A1CDA000FE2BF /* Heartbeat.ahap */; };
+		F5043B072A8CC68E003E18B3 /* Rumble.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EA2A8A1CDA000FE2BF /* Rumble.ahap */; };
+		F5043B082A8CC68E003E18B3 /* Drums.wav in Resources */ = {isa = PBXBuildFile; fileRef = F5E668ED2A8A1CDA000FE2BF /* Drums.wav */; };
+		F5043B092A8CC68E003E18B3 /* Drums.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EF2A8A1CDA000FE2BF /* Drums.ahap */; };
+		F5043B0A2A8CC68E003E18B3 /* Inflate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EE2A8A1CDA000FE2BF /* Inflate.ahap */; };
+		F5043B0B2A8CC68E003E18B3 /* Oscillate.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EB2A8A1CDA000FE2BF /* Oscillate.ahap */; };
+		F5043B0C2A8CC68E003E18B3 /* Boing.ahap in Resources */ = {isa = PBXBuildFile; fileRef = F5E668EC2A8A1CDA000FE2BF /* Boing.ahap */; };
 		F53271BC2A8B7A150053324A /* CtaViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BB2A8B7A150053324A /* CtaViewList.swift */; };
 		F53271BE2A8B88EC0053324A /* SimulatedBackendSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */; };
 		F53271C02A8BB29C0053324A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BF2A8BB29C0053324A /* SettingsView.swift */; };
@@ -45,7 +87,59 @@
 		F5FA10082A86660E00260BA5 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA10032A861F4C00260BA5 /* LoadView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F5043ACC2A8CC540003E18B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5FA0FC82A84DF7F00260BA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5043AB62A8CC53D003E18B3;
+			remoteInfo = HHLUXAppClip;
+		};
+		F5043AD62A8CC540003E18B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5FA0FC82A84DF7F00260BA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5043AB62A8CC53D003E18B3;
+			remoteInfo = HHLUXAppClip;
+		};
+		F5043ADD2A8CC540003E18B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5FA0FC82A84DF7F00260BA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5043AB62A8CC53D003E18B3;
+			remoteInfo = HHLUXAppClip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F5043AE02A8CC540003E18B3 /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				F5043ADF2A8CC540003E18B3 /* HHLUXAppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F5043AB72A8CC53D003E18B3 /* HHLUXAppClip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHLUXAppClip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5043AB92A8CC53D003E18B3 /* HHLUXAppClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLUXAppClipApp.swift; sourceTree = "<group>"; };
+		F5043ABB2A8CC53D003E18B3 /* SwiftDataExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataExample.swift; sourceTree = "<group>"; };
+		F5043ABD2A8CC53D003E18B3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F5043ABF2A8CC53F003E18B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5043AC22A8CC53F003E18B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F5043AC42A8CC53F003E18B3 /* HHLUXAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HHLUXAppClip.entitlements; sourceTree = "<group>"; };
+		F5043AC52A8CC53F003E18B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5043AC62A8CC53F003E18B3 /* HHLUXAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HHLUXAppClip.entitlements; sourceTree = "<group>"; };
+		F5043ACB2A8CC540003E18B3 /* HHLUXAppClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHLUXAppClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5043ACF2A8CC540003E18B3 /* HHLUXAppClipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLUXAppClipTests.swift; sourceTree = "<group>"; };
+		F5043AD52A8CC540003E18B3 /* HHLUXAppClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHLUXAppClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5043AD92A8CC540003E18B3 /* HHLUXAppClipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLUXAppClipUITests.swift; sourceTree = "<group>"; };
+		F5043ADB2A8CC540003E18B3 /* HHLUXAppClipUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLUXAppClipUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F53271BB2A8B7A150053324A /* CtaViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtaViewList.swift; sourceTree = "<group>"; };
 		F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedBackendSingleton.swift; sourceTree = "<group>"; };
 		F53271BF2A8BB29C0053324A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -88,6 +182,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F5043AB42A8CC53D003E18B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5043AC82A8CC540003E18B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5043AD22A8CC540003E18B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F5FA0FCD2A84DF7F00260BA5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,6 +213,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F5043AB82A8CC53D003E18B3 /* HHLUXAppClip */ = {
+			isa = PBXGroup;
+			children = (
+				F5043AB92A8CC53D003E18B3 /* HHLUXAppClipApp.swift */,
+				F5043ABB2A8CC53D003E18B3 /* SwiftDataExample.swift */,
+				F5043ABD2A8CC53D003E18B3 /* Item.swift */,
+				F5043ABF2A8CC53F003E18B3 /* Assets.xcassets */,
+				F5043AC42A8CC53F003E18B3 /* HHLUXAppClip.entitlements */,
+				F5043AC52A8CC53F003E18B3 /* Info.plist */,
+				F5043AC62A8CC53F003E18B3 /* HHLUXAppClip.entitlements */,
+				F5043AC12A8CC53F003E18B3 /* Preview Content */,
+			);
+			path = HHLUXAppClip;
+			sourceTree = "<group>";
+		};
+		F5043AC12A8CC53F003E18B3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F5043AC22A8CC53F003E18B3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F5043ACE2A8CC540003E18B3 /* HHLUXAppClipTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5043ACF2A8CC540003E18B3 /* HHLUXAppClipTests.swift */,
+			);
+			path = HHLUXAppClipTests;
+			sourceTree = "<group>";
+		};
+		F5043AD82A8CC540003E18B3 /* HHLUXAppClipUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F5043AD92A8CC540003E18B3 /* HHLUXAppClipUITests.swift */,
+				F5043ADB2A8CC540003E18B3 /* HHLUXAppClipUITestsLaunchTests.swift */,
+			);
+			path = HHLUXAppClipUITests;
+			sourceTree = "<group>";
+		};
 		F5E668E82A8A1CB4000FE2BF /* AHAP */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +272,9 @@
 			children = (
 				F5FA0FEF2A84E9FD00260BA5 /* README.md */,
 				F5FA0FD22A84DF7F00260BA5 /* HHLUXPrototype */,
+				F5043AB82A8CC53D003E18B3 /* HHLUXAppClip */,
+				F5043ACE2A8CC540003E18B3 /* HHLUXAppClipTests */,
+				F5043AD82A8CC540003E18B3 /* HHLUXAppClipUITests */,
 				F5FA0FD12A84DF7F00260BA5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				F5FA0FD02A84DF7F00260BA5 /* HHLUXPrototype.app */,
+				F5043AB72A8CC53D003E18B3 /* HHLUXAppClip.app */,
+				F5043ACB2A8CC540003E18B3 /* HHLUXAppClipTests.xctest */,
+				F5043AD52A8CC540003E18B3 /* HHLUXAppClipUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +355,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F5043AB62A8CC53D003E18B3 /* HHLUXAppClip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5043AE72A8CC540003E18B3 /* Build configuration list for PBXNativeTarget "HHLUXAppClip" */;
+			buildPhases = (
+				F5043AB32A8CC53D003E18B3 /* Sources */,
+				F5043AB42A8CC53D003E18B3 /* Frameworks */,
+				F5043AB52A8CC53D003E18B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHLUXAppClip;
+			productName = HHLUXAppClip;
+			productReference = F5043AB72A8CC53D003E18B3 /* HHLUXAppClip.app */;
+			productType = "com.apple.product-type.application.on-demand-install-capable";
+		};
+		F5043ACA2A8CC540003E18B3 /* HHLUXAppClipTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5043AE82A8CC540003E18B3 /* Build configuration list for PBXNativeTarget "HHLUXAppClipTests" */;
+			buildPhases = (
+				F5043AC72A8CC540003E18B3 /* Sources */,
+				F5043AC82A8CC540003E18B3 /* Frameworks */,
+				F5043AC92A8CC540003E18B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5043ACD2A8CC540003E18B3 /* PBXTargetDependency */,
+			);
+			name = HHLUXAppClipTests;
+			productName = HHLUXAppClipTests;
+			productReference = F5043ACB2A8CC540003E18B3 /* HHLUXAppClipTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F5043AD42A8CC540003E18B3 /* HHLUXAppClipUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5043AE92A8CC540003E18B3 /* Build configuration list for PBXNativeTarget "HHLUXAppClipUITests" */;
+			buildPhases = (
+				F5043AD12A8CC540003E18B3 /* Sources */,
+				F5043AD22A8CC540003E18B3 /* Frameworks */,
+				F5043AD32A8CC540003E18B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5043AD72A8CC540003E18B3 /* PBXTargetDependency */,
+			);
+			name = HHLUXAppClipUITests;
+			productName = HHLUXAppClipUITests;
+			productReference = F5043AD52A8CC540003E18B3 /* HHLUXAppClipUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F5FA0FCF2A84DF7F00260BA5 /* HHLUXPrototype */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5FA0FDF2A84DF8000260BA5 /* Build configuration list for PBXNativeTarget "HHLUXPrototype" */;
@@ -201,10 +415,12 @@
 				F5FA0FCC2A84DF7F00260BA5 /* Sources */,
 				F5FA0FCD2A84DF7F00260BA5 /* Frameworks */,
 				F5FA0FCE2A84DF7F00260BA5 /* Resources */,
+				F5043AE02A8CC540003E18B3 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F5043ADE2A8CC540003E18B3 /* PBXTargetDependency */,
 			);
 			name = HHLUXPrototype;
 			productName = HHLUXPrototype;
@@ -218,9 +434,20 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					F5043AB62A8CC53D003E18B3 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					F5043ACA2A8CC540003E18B3 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F5043AB62A8CC53D003E18B3;
+					};
+					F5043AD42A8CC540003E18B3 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F5043AB62A8CC53D003E18B3;
+					};
 					F5FA0FCF2A84DF7F00260BA5 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -240,11 +467,45 @@
 			projectRoot = "";
 			targets = (
 				F5FA0FCF2A84DF7F00260BA5 /* HHLUXPrototype */,
+				F5043AB62A8CC53D003E18B3 /* HHLUXAppClip */,
+				F5043ACA2A8CC540003E18B3 /* HHLUXAppClipTests */,
+				F5043AD42A8CC540003E18B3 /* HHLUXAppClipUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F5043AB52A8CC53D003E18B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5043B092A8CC68E003E18B3 /* Drums.ahap in Resources */,
+				F5043AC32A8CC53F003E18B3 /* Preview Assets.xcassets in Resources */,
+				F5043B052A8CC680003E18B3 /* Assets.xcassets in Resources */,
+				F5043B0C2A8CC68E003E18B3 /* Boing.ahap in Resources */,
+				F5043B082A8CC68E003E18B3 /* Drums.wav in Resources */,
+				F5043B062A8CC68E003E18B3 /* Heartbeat.ahap in Resources */,
+				F5043B072A8CC68E003E18B3 /* Rumble.ahap in Resources */,
+				F5043AEA2A8CC64A003E18B3 /* symbol_names.txt in Resources */,
+				F5043B0B2A8CC68E003E18B3 /* Oscillate.ahap in Resources */,
+				F5043B0A2A8CC68E003E18B3 /* Inflate.ahap in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5043AC92A8CC540003E18B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5043AD32A8CC540003E18B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F5FA0FCE2A84DF7F00260BA5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +526,58 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F5043AB32A8CC53D003E18B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5043AF42A8CC659003E18B3 /* AppSettings.swift in Sources */,
+				F5043ABC2A8CC53D003E18B3 /* SwiftDataExample.swift in Sources */,
+				F5043AFA2A8CC667003E18B3 /* LoadViewModel.swift in Sources */,
+				F5043AF52A8CC667003E18B3 /* ContentView.swift in Sources */,
+				F5043AF92A8CC667003E18B3 /* PopupsView.swift in Sources */,
+				F5043AFB2A8CC667003E18B3 /* SettingsView.swift in Sources */,
+				F5043B002A8CC667003E18B3 /* ListsView.swift in Sources */,
+				F5043AEE2A8CC652003E18B3 /* FloatingError.swift in Sources */,
+				F5043AFD2A8CC667003E18B3 /* SelectorsView.swift in Sources */,
+				F5043AFC2A8CC667003E18B3 /* MenuView.swift in Sources */,
+				F5043AED2A8CC652003E18B3 /* SecureTextFieldWithReveal.swift in Sources */,
+				F5043AF12A8CC659003E18B3 /* URL+Extension.swift in Sources */,
+				F5043B032A8CC667003E18B3 /* LoadView.swift in Sources */,
+				F5043B012A8CC667003E18B3 /* SwitchesView.swift in Sources */,
+				F5043AFF2A8CC667003E18B3 /* HapticsView.swift in Sources */,
+				F5043AEB2A8CC652003E18B3 /* LegendView.swift in Sources */,
+				F5043AFE2A8CC667003E18B3 /* CtaView.swift in Sources */,
+				F5043ABE2A8CC53D003E18B3 /* Item.swift in Sources */,
+				F5043AF82A8CC667003E18B3 /* InputView.swift in Sources */,
+				F5043AEF2A8CC659003E18B3 /* ButtonStyles.swift in Sources */,
+				F5043AF22A8CC659003E18B3 /* View+Extension.swift in Sources */,
+				F5043B022A8CC667003E18B3 /* StatesView.swift in Sources */,
+				F5043AEC2A8CC652003E18B3 /* FloatingTextField.swift in Sources */,
+				F5043AF72A8CC667003E18B3 /* CtaViewList.swift in Sources */,
+				F5043AF62A8CC667003E18B3 /* SymbolsView.swift in Sources */,
+				F5043AF32A8CC659003E18B3 /* SimulatedBackendSingleton.swift in Sources */,
+				F5043ABA2A8CC53D003E18B3 /* HHLUXAppClipApp.swift in Sources */,
+				F5043AF02A8CC659003E18B3 /* NativeColor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5043AC72A8CC540003E18B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5043AD02A8CC540003E18B3 /* HHLUXAppClipTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5043AD12A8CC540003E18B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5043ADC2A8CC540003E18B3 /* HHLUXAppClipUITestsLaunchTests.swift in Sources */,
+				F5043ADA2A8CC540003E18B3 /* HHLUXAppClipUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F5FA0FCC2A84DF7F00260BA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,7 +613,205 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F5043ACD2A8CC540003E18B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5043AB62A8CC53D003E18B3 /* HHLUXAppClip */;
+			targetProxy = F5043ACC2A8CC540003E18B3 /* PBXContainerItemProxy */;
+		};
+		F5043AD72A8CC540003E18B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5043AB62A8CC53D003E18B3 /* HHLUXAppClip */;
+			targetProxy = F5043AD62A8CC540003E18B3 /* PBXContainerItemProxy */;
+		};
+		F5043ADE2A8CC540003E18B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5043AB62A8CC53D003E18B3 /* HHLUXAppClip */;
+			targetProxy = F5043ADD2A8CC540003E18B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F5043AE12A8CC540003E18B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HHLUXAppClip/HHLUXAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_ASSET_PATHS = "\"HHLUXAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = 4ES3P3AL8G;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HHLUXAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HHLUXPrototype;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hedgehoglab.HHLUXPrototype.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5043AE22A8CC540003E18B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HHLUXAppClip/HHLUXAppClip.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_ASSET_PATHS = "\"HHLUXAppClip/Preview Content\"";
+				DEVELOPMENT_TEAM = 4ES3P3AL8G;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HHLUXAppClip/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HHLUXPrototype;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hedgehoglab.HHLUXPrototype.Clip;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5043AE32A8CC540003E18B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ES3P3AL8G;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hedgehoglab.HHLUXPrototype.HHLUXAppClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHLUXAppClip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HHLUXAppClip";
+			};
+			name = Debug;
+		};
+		F5043AE42A8CC540003E18B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ES3P3AL8G;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hedgehoglab.HHLUXPrototype.HHLUXAppClipTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HHLUXAppClip.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HHLUXAppClip";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5043AE52A8CC540003E18B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ES3P3AL8G;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hedgehoglab.HHLUXPrototype.HHLUXAppClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HHLUXAppClip;
+			};
+			name = Debug;
+		};
+		F5043AE62A8CC540003E18B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ES3P3AL8G;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hedgehoglab.HHLUXPrototype.HHLUXAppClipUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HHLUXAppClip;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		F5FA0FDD2A84DF8000260BA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -413,11 +924,12 @@
 		F5FA0FE02A84DF8000260BA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HHLUXPrototype/HHLUXPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"HHLUXPrototype/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ES3P3AL8G;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -455,11 +967,12 @@
 		F5FA0FE12A84DF8000260BA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HHLUXPrototype/HHLUXPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"HHLUXPrototype/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ES3P3AL8G;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -497,6 +1010,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F5043AE72A8CC540003E18B3 /* Build configuration list for PBXNativeTarget "HHLUXAppClip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5043AE12A8CC540003E18B3 /* Debug */,
+				F5043AE22A8CC540003E18B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5043AE82A8CC540003E18B3 /* Build configuration list for PBXNativeTarget "HHLUXAppClipTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5043AE32A8CC540003E18B3 /* Debug */,
+				F5043AE42A8CC540003E18B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5043AE92A8CC540003E18B3 /* Build configuration list for PBXNativeTarget "HHLUXAppClipUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5043AE52A8CC540003E18B3 /* Debug */,
+				F5043AE62A8CC540003E18B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F5FA0FCB2A84DF7F00260BA5 /* Build configuration list for PBXProject "HHLUXPrototype" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
