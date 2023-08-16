@@ -92,7 +92,6 @@ struct SelectorsView: View {
                     }
             }
         }
-        .listStyle(.sidebar)
     }
 
     var settings: some View {

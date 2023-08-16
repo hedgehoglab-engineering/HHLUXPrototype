@@ -64,12 +64,13 @@ struct ContentView: View {
     var footer: some View {
         VStack {
             settingsMenu
-            .padding()
+                .font(.callout)
+                .padding()
             Text("Copyright 2023 hedgehog lab")
+                .font(.caption)
         }
         .foregroundColor(.black.mix(with: .white, amount: 0.7))
         .shadow(color: .white, radius: 0.1, x: 0, y: 1)
-        .font(.caption)
     }
 
     var settingsMenu: some View {

@@ -36,7 +36,6 @@ struct InputView: View {
                         .lineLimit(8...80)
                 }
             }
-            .listStyle(.sidebar)
             List {
                 Section("Custom vertical one line field, empty state") {
                     FloatingTextField(title: "Username placeholder", text: .constant(""), error: .constant(""))
@@ -51,7 +50,6 @@ struct InputView: View {
                 }
                 .listRowBackground(Color.clear)
             }
-            .listStyle(.sidebar)
         }
         .background(Color(UIColor.secondarySystemBackground))
     }

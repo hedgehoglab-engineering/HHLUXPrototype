@@ -47,21 +47,6 @@ struct ListsView: View {
                 .frame(height: 200)
                 .listRowBackground(Color.clear)
             }
-            Section (header: makeLegend(label: "collapsable sections")) {
-                List {
-                    Section("section one") {
-                        Text("1.1")
-                        Text("1.2")
-                    }
-                    Section("section two") {
-                        Text("2.1")
-                        Text("2.2")
-                    }
-                }
-                .listStyle(.sidebar)
-                .frame(height: 300)
-                .listRowBackground(Color.clear)
-            }
             Section (header: makeLegend(label: "inset sections")) {
                 List {
                     Section("section one") {
@@ -89,7 +74,6 @@ struct ListsView: View {
                 .listRowBackground(Color.clear)
             }
         }
-        .listStyle(.sidebar)
     }
 }
 
