@@ -14,7 +14,8 @@ struct HHLUXAppClipApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            SwiftDataExample()
         }
-        .modelContainer(for: Item.self)
+//        .modelContainer(for: Item.self)
     }
 }

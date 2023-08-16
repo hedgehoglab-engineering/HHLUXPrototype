@@ -9,9 +9,5 @@
 		<key>NSAppClipRequestLocationConfirmation</key>
 		<false/>
 	</dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
 </dict>
 </plist>

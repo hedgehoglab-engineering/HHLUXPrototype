@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F5043ABA2A8CC53D003E18B3 /* HHLUXAppClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043AB92A8CC53D003E18B3 /* HHLUXAppClipApp.swift */; };
-		F5043ABC2A8CC53D003E18B3 /* SwiftDataExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043ABB2A8CC53D003E18B3 /* SwiftDataExample.swift */; };
-		F5043ABE2A8CC53D003E18B3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043ABD2A8CC53D003E18B3 /* Item.swift */; };
 		F5043AC32A8CC53F003E18B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5043AC22A8CC53F003E18B3 /* Preview Assets.xcassets */; };
 		F5043AD02A8CC540003E18B3 /* HHLUXAppClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043ACF2A8CC540003E18B3 /* HHLUXAppClipTests.swift */; };
 		F5043ADA2A8CC540003E18B3 /* HHLUXAppClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5043AD92A8CC540003E18B3 /* HHLUXAppClipUITests.swift */; };
@@ -531,7 +529,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5043AF42A8CC659003E18B3 /* AppSettings.swift in Sources */,
-				F5043ABC2A8CC53D003E18B3 /* SwiftDataExample.swift in Sources */,
 				F5043AFA2A8CC667003E18B3 /* LoadViewModel.swift in Sources */,
 				F5043AF52A8CC667003E18B3 /* ContentView.swift in Sources */,
 				F5043AF92A8CC667003E18B3 /* PopupsView.swift in Sources */,
@@ -547,7 +544,6 @@
 				F5043AFF2A8CC667003E18B3 /* HapticsView.swift in Sources */,
 				F5043AEB2A8CC652003E18B3 /* LegendView.swift in Sources */,
 				F5043AFE2A8CC667003E18B3 /* CtaView.swift in Sources */,
-				F5043ABE2A8CC53D003E18B3 /* Item.swift in Sources */,
 				F5043AF82A8CC667003E18B3 /* InputView.swift in Sources */,
 				F5043AEF2A8CC659003E18B3 /* ButtonStyles.swift in Sources */,
 				F5043AF22A8CC659003E18B3 /* View+Extension.swift in Sources */,
@@ -640,7 +636,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HHLUXAppClip/HHLUXAppClip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"HHLUXAppClip/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ES3P3AL8G;
 				ENABLE_PREVIEWS = YES;
@@ -649,6 +645,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HHLUXAppClip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HHLUXPrototype;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -679,7 +676,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HHLUXAppClip/HHLUXAppClip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"HHLUXAppClip/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ES3P3AL8G;
 				ENABLE_PREVIEWS = YES;
@@ -688,6 +685,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HHLUXAppClip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = HHLUXPrototype;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -929,12 +927,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HHLUXPrototype/HHLUXPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"HHLUXPrototype/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ES3P3AL8G;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HHLUXPrototype;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -950,7 +950,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hedgehoglab.HHLUXPrototype;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -972,12 +972,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = HHLUXPrototype/HHLUXPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"HHLUXPrototype/Preview Content\"";
 				DEVELOPMENT_TEAM = 4ES3P3AL8G;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HHLUXPrototype;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -993,7 +995,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hedgehoglab.HHLUXPrototype;
 				PRODUCT_NAME = "$(TARGET_NAME)";
