@@ -132,10 +132,12 @@ struct ContentView: View {
             } label: {
                 Label("Popups", systemImage: "rectangle.on.rectangle.angled")
             }
-            NavigationLink {
-                PopupsView()
-            } label: {
-                Label("Tips", systemImage: "rectangle.3.group.bubble.left.fill")
+            if #available(iOS 17.0, *) {
+                NavigationLink {
+                    TipsView()
+                } label: {
+                    Label("Tips", systemImage: "rectangle.3.group.bubble.left.fill")
+                }
             }
             NavigationLink {
                 ListsView()

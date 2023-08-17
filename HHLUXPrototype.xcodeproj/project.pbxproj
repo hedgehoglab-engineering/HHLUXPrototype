@@ -50,6 +50,8 @@
 		F53271BC2A8B7A150053324A /* CtaViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BB2A8B7A150053324A /* CtaViewList.swift */; };
 		F53271BE2A8B88EC0053324A /* SimulatedBackendSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */; };
 		F53271C02A8BB29C0053324A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BF2A8BB29C0053324A /* SettingsView.swift */; };
+		F553E7302A8E7022003AAF8C /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553E72F2A8E7022003AAF8C /* TipsView.swift */; };
+		F553E7312A8E711A003AAF8C /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553E72F2A8E7022003AAF8C /* TipsView.swift */; };
 		F5C956E82A8E2F7200EC2054 /* PickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C956E72A8E2F7200EC2054 /* PickersView.swift */; };
 		F5C956E92A8E313A00EC2054 /* PickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C956E72A8E2F7200EC2054 /* PickersView.swift */; };
 		F5E668DF2A878A9E000FE2BF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668DE2A878A9E000FE2BF /* View+Extension.swift */; };
@@ -142,6 +144,7 @@
 		F53271BB2A8B7A150053324A /* CtaViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtaViewList.swift; sourceTree = "<group>"; };
 		F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedBackendSingleton.swift; sourceTree = "<group>"; };
 		F53271BF2A8BB29C0053324A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F553E72F2A8E7022003AAF8C /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		F5C956E72A8E2F7200EC2054 /* PickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickersView.swift; sourceTree = "<group>"; };
 		F5E668DE2A878A9E000FE2BF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F5E668E02A87D525000FE2BF /* NativeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeColor.swift; sourceTree = "<group>"; };
@@ -308,6 +311,7 @@
 				F5FA0FF62A85996200260BA5 /* InputView.swift */,
 				F5FA0FF82A8599EB00260BA5 /* StatesView.swift */,
 				F5E668E22A88A140000FE2BF /* PopupsView.swift */,
+				F553E72F2A8E7022003AAF8C /* TipsView.swift */,
 				F5FA10032A861F4C00260BA5 /* LoadView.swift */,
 				F5FA10052A86293500260BA5 /* LoadViewModel.swift */,
 				F5E668E62A8A15C7000FE2BF /* HapticsView.swift */,
@@ -534,6 +538,7 @@
 				F5043AFA2A8CC667003E18B3 /* LoadViewModel.swift in Sources */,
 				F5043AF52A8CC667003E18B3 /* ContentView.swift in Sources */,
 				F5043AF92A8CC667003E18B3 /* PopupsView.swift in Sources */,
+				F553E7312A8E711A003AAF8C /* TipsView.swift in Sources */,
 				F5043AFB2A8CC667003E18B3 /* SettingsView.swift in Sources */,
 				F5043B002A8CC667003E18B3 /* ListsView.swift in Sources */,
 				F5043AEE2A8CC652003E18B3 /* FloatingError.swift in Sources */,
@@ -585,6 +590,7 @@
 				F5E668E72A8A15C7000FE2BF /* HapticsView.swift in Sources */,
 				F5E668F82A8A1FE2000FE2BF /* SwitchesView.swift in Sources */,
 				F53271BC2A8B7A150053324A /* CtaViewList.swift in Sources */,
+				F553E7302A8E7022003AAF8C /* TipsView.swift in Sources */,
 				F5FA0FD62A84DF7F00260BA5 /* ContentView.swift in Sources */,
 				F5FA0FD42A84DF7F00260BA5 /* HHLUXPrototypeApp.swift in Sources */,
 				F5FA0FF92A8599EB00260BA5 /* StatesView.swift in Sources */,
