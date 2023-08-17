@@ -11,6 +11,8 @@ struct ListsView: View {
 
     @State private var legend = LegendView()
 
+    @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
+
     @ViewBuilder func makeLegend(label: String, types: [LegendView.Types] = [.style, .color]) -> some View {
         legend.makeLegend(label: "List with "+label, types: types)
     }
@@ -73,6 +75,9 @@ struct ListsView: View {
                 .frame(height: 200)
                 .listRowBackground(Color.clear)
             }
+        }
+        .ifModifier(backend.orangeTint) { view in
+            view.tint(.orange)
         }
     }
 }

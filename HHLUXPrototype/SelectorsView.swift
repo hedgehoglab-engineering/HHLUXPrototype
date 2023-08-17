@@ -15,6 +15,8 @@ struct SelectorsView: View {
 
     @State private var legend = LegendView()
 
+    @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
+
     var wheelLegend: some View {
         let label = "Wheel selector"
         let types: [LegendView.Types] = [.style, .scale]
@@ -53,6 +55,9 @@ struct SelectorsView: View {
             .ifModifier(!isShowingLabels) { view in
                 view.labelsHidden()
             }
+        }
+        .ifModifier(backend.orangeTint) { view in
+            view.tint(.orange)
         }
         .background(Color(UIColor.secondarySystemBackground))
     }
@@ -98,7 +103,9 @@ struct SelectorsView: View {
         VStack {
             VStack {
                 Toggle("Show labels", isOn: $isShowingLabels)
-                Toggle("Color overlay", isOn: $isColored)
+                Toggle("Orange tint", isOn: $backend.orangeTint)
+                Toggle("Orange overlay", isOn: $isColored)
+
             }
             .font(.footnote)
             .foregroundColor(.secondary)

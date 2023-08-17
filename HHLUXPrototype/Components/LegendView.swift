@@ -29,6 +29,8 @@ struct LegendView: View {
                 if type == .style { buttonStyle }
                 if type == .color { buttonColor }
             }
+            .foregroundColor(.secondary)
+            .opacity(0.1)
             Spacer()
         }
         .sheet(isPresented: $isShowingLegend) {
@@ -46,6 +48,8 @@ struct LegendView: View {
             buttonStyle
             buttonColor
         }
+        .foregroundColor(.secondary)
+        .opacity(0.2)
     }
 
     var legendLabel: some View {
@@ -57,7 +61,6 @@ struct LegendView: View {
             isShowingLegend.toggle()
         }) {
             Image(systemName: "l.square.fill")
-                .opacity(0.5)
         }
     }
 
@@ -70,7 +73,6 @@ struct LegendView: View {
             isShowingLegend.toggle()
         }) {
             Image(systemName: "square.arrowtriangle.4.outward")
-                .opacity(0.5)
         }
     }
 
@@ -83,7 +85,6 @@ struct LegendView: View {
             isShowingLegend.toggle()
         }) {
             Image(systemName: "textformat.size")
-                .opacity(0.5)
         }
     }
 
@@ -96,7 +97,6 @@ struct LegendView: View {
             isShowingLegend.toggle()
         }) {
             Image(systemName: "paintpalette.fill")
-                .opacity(0.5)
         }
     }
 

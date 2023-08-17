@@ -50,6 +50,8 @@
 		F53271BC2A8B7A150053324A /* CtaViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BB2A8B7A150053324A /* CtaViewList.swift */; };
 		F53271BE2A8B88EC0053324A /* SimulatedBackendSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */; };
 		F53271C02A8BB29C0053324A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BF2A8BB29C0053324A /* SettingsView.swift */; };
+		F5C956E82A8E2F7200EC2054 /* PickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C956E72A8E2F7200EC2054 /* PickersView.swift */; };
+		F5C956E92A8E313A00EC2054 /* PickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C956E72A8E2F7200EC2054 /* PickersView.swift */; };
 		F5E668DF2A878A9E000FE2BF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668DE2A878A9E000FE2BF /* View+Extension.swift */; };
 		F5E668E12A87D525000FE2BF /* NativeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E02A87D525000FE2BF /* NativeColor.swift */; };
 		F5E668E32A88A140000FE2BF /* PopupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668E22A88A140000FE2BF /* PopupsView.swift */; };
@@ -132,7 +134,6 @@
 		F5043AC22A8CC53F003E18B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F5043AC42A8CC53F003E18B3 /* HHLUXAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HHLUXAppClip.entitlements; sourceTree = "<group>"; };
 		F5043AC52A8CC53F003E18B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5043AC62A8CC53F003E18B3 /* HHLUXAppClip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HHLUXAppClip.entitlements; sourceTree = "<group>"; };
 		F5043ACB2A8CC540003E18B3 /* HHLUXAppClipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHLUXAppClipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5043ACF2A8CC540003E18B3 /* HHLUXAppClipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLUXAppClipTests.swift; sourceTree = "<group>"; };
 		F5043AD52A8CC540003E18B3 /* HHLUXAppClipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HHLUXAppClipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +142,7 @@
 		F53271BB2A8B7A150053324A /* CtaViewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CtaViewList.swift; sourceTree = "<group>"; };
 		F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedBackendSingleton.swift; sourceTree = "<group>"; };
 		F53271BF2A8BB29C0053324A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F5C956E72A8E2F7200EC2054 /* PickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickersView.swift; sourceTree = "<group>"; };
 		F5E668DE2A878A9E000FE2BF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F5E668E02A87D525000FE2BF /* NativeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeColor.swift; sourceTree = "<group>"; };
 		F5E668E22A88A140000FE2BF /* PopupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupsView.swift; sourceTree = "<group>"; };
@@ -220,7 +222,6 @@
 				F5043ABF2A8CC53F003E18B3 /* Assets.xcassets */,
 				F5043AC42A8CC53F003E18B3 /* HHLUXAppClip.entitlements */,
 				F5043AC52A8CC53F003E18B3 /* Info.plist */,
-				F5043AC62A8CC53F003E18B3 /* HHLUXAppClip.entitlements */,
 				F5043AC12A8CC53F003E18B3 /* Preview Content */,
 			);
 			path = HHLUXAppClip;
@@ -302,6 +303,7 @@
 				F5FA0FF22A850BCD00260BA5 /* ListsView.swift */,
 				F5FA0FF42A850BF200260BA5 /* SelectorsView.swift */,
 				F5E668F72A8A1FE2000FE2BF /* SwitchesView.swift */,
+				F5C956E72A8E2F7200EC2054 /* PickersView.swift */,
 				F5FA0FF02A84F7CA00260BA5 /* MenuView.swift */,
 				F5FA0FF62A85996200260BA5 /* InputView.swift */,
 				F5FA0FF82A8599EB00260BA5 /* StatesView.swift */,
@@ -548,6 +550,7 @@
 				F5043AEF2A8CC659003E18B3 /* ButtonStyles.swift in Sources */,
 				F5043AF22A8CC659003E18B3 /* View+Extension.swift in Sources */,
 				F5043B022A8CC667003E18B3 /* StatesView.swift in Sources */,
+				F5C956E92A8E313A00EC2054 /* PickersView.swift in Sources */,
 				F5043AEC2A8CC652003E18B3 /* FloatingTextField.swift in Sources */,
 				F5043AF72A8CC667003E18B3 /* CtaViewList.swift in Sources */,
 				F5043AF62A8CC667003E18B3 /* SymbolsView.swift in Sources */,
@@ -598,6 +601,7 @@
 				F5FA10002A859BF000260BA5 /* SecureTextFieldWithReveal.swift in Sources */,
 				F5FA0FE52A84E25F00260BA5 /* CtaView.swift in Sources */,
 				F5FA10022A85A72400260BA5 /* ButtonStyles.swift in Sources */,
+				F5C956E82A8E2F7200EC2054 /* PickersView.swift in Sources */,
 				F5E668DF2A878A9E000FE2BF /* View+Extension.swift in Sources */,
 				F5E668E12A87D525000FE2BF /* NativeColor.swift in Sources */,
 				F5E668E52A88AD84000FE2BF /* LegendView.swift in Sources */,

@@ -15,6 +15,7 @@ struct SettingsView: View {
 
     var body: some View {
         Group {
+            Toggle("Orange tint", isOn: $backend.orangeTint)
             Toggle("Force light mode", isOn: $backend.lightMode)
             Toggle("Force backend failure", isOn: $backend.willFail)
             Toggle("Force backend timeout", isOn: $backend.willTimeout)

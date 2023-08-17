@@ -11,6 +11,8 @@ final class SimulatedBackendSingleton: NSObject, ObservableObject {
 
     @Published var lightMode = true
 
+    @Published var orangeTint = false
+
     @Published var willFail = false {
         willSet {
             if newValue {

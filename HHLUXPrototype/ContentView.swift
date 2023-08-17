@@ -94,7 +94,7 @@ struct ContentView: View {
                 NavigationLink {
                     SymbolsView()
                 } label: {
-                    Label("Symbols", systemImage: "apple.logo")
+                    Label("SF Symbols", systemImage: "apple.logo")
                 }
             }
         }
@@ -115,7 +115,12 @@ struct ContentView: View {
             NavigationLink {
                 SwitchesView()
             } label: {
-                Label("Switches, sliders, etc", systemImage: "switch.2")
+                Label("Switches, sliders, gauges", systemImage: "switch.2")
+            }
+            NavigationLink {
+                PickersView()
+            } label: {
+                Label("Pickers, Pages, share", systemImage: "eyedropper")
             }
             NavigationLink {
                 InputView()
@@ -125,23 +130,28 @@ struct ContentView: View {
             NavigationLink {
                 PopupsView()
             } label: {
-                Label("Popups", systemImage: "rectangle.3.group.bubble.left.fill")
+                Label("Popups", systemImage: "rectangle.on.rectangle.angled")
+            }
+            NavigationLink {
+                PopupsView()
+            } label: {
+                Label("Tips", systemImage: "rectangle.3.group.bubble.left.fill")
             }
             NavigationLink {
                 ListsView()
             } label: {
                 Label("Lists", systemImage: "list.bullet.rectangle")
             }
-            NavigationLink {
-                MenuView()
-            } label: {
-                Label("Menus", systemImage: "filemenu.and.selection")
-            }
         }
     }
 
     var sidebarList2: some View {
         Group {
+            NavigationLink {
+                MenuView()
+            } label: {
+                Label("Menus", systemImage: "filemenu.and.selection")
+            }
             NavigationLink {
                 HapticsView()
             } label: {

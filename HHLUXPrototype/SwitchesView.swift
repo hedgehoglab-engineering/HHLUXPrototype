@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SwitchesView: View {
 
-    @State private var isColored = false
+    @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
 
     let start = Date().addingTimeInterval(-360)
     let end = Date().addingTimeInterval(360)
@@ -19,16 +19,17 @@ struct SwitchesView: View {
     @State private var speed = 50.0
     @State private var isEditing = false
 
-    @Environment(\.calendar) var calendar
-    @State var dates: Set<DateComponents> = []
+    @State private var batteryLevel = 90.0
 
     var body: some View {
         List {
             Section {
-                Toggle("Toggle (orange tint)", isOn: $isColored)
-                    .ifModifier(isColored) { view in
-                        view.tint(.orange)
-                    }
+                VStack (alignment: .leading) {
+                    Toggle("Switch Toggle (orange tint)", isOn: $backend.orangeTint)
+                        .toggleStyle(.switch)
+                    Toggle("Button Toggle (orange tint)", isOn: $backend.orangeTint)
+                        .toggleStyle(.button)
+                }
             }
             Section {
                 stepper
@@ -39,35 +40,77 @@ struct SwitchesView: View {
             Section {
                 progress
             }
-            Section ("Page control horizontal") {
-                pages
-            }
-            Section ("Page control vertical"){
-                pagesRotated
+            Section ("Gauges") {
+                gauges
             }
             Section ("Variable Symbols"){
                 symbols
             }
-            Section ("Share links"){
-                ShareLink(item: URL(string: "http://apple.com")!)
-                ShareLink(item: URL(string: "http://apple.com")!) {
-                    Label("Custom icon share", systemImage: "rectangle.3.group.bubble.left.fill")
-                }
+        }
+        .ifModifier(backend.orangeTint) { view in
+            view.tint(.orange)
+        }
+    }
+
+    var gauge: some View {
+        Gauge(value: batteryLevel, in: 0...100) {
+            Text("")
+        } currentValueLabel: {
+            Text("\(Int(batteryLevel))")
+        } minimumValueLabel: {
+            Text("0")
+        } maximumValueLabel: {
+            Text("100")
+        }
+    }
+    var gauges: some View {
+        VStack {
+            HStack {
+                gauge
+                gauge
+                .gaugeStyle(.accessoryCircular)
+                gauge
+                .gaugeStyle(.accessoryCircularCapacity)
             }
-            Section ("Multi Date picker") {
-                VStack {
-                    MultiDatePicker("Select your preferred dates", selection: $dates)
-                    Text(summary)
-                }
-                .padding()
-                .ifModifier(isColored) { view in
-                    view.tint(.orange)
-                }
+            HStack {
+                gauge
+                    .gaugeStyle(.accessoryLinear)
+                gauge
+                    .gaugeStyle(.accessoryLinearCapacity)
             }
         }
-        .onAppear {
-            UIPageControl.appearance().currentPageIndicatorTintColor = .black
-            UIPageControl.appearance().pageIndicatorTintColor = .lightGray
+    }
+
+    var stepper: some View {
+        Stepper {
+            Text("Stepper: \(value)")
+        } onIncrement: {
+            value += 1
+        } onDecrement: {
+            value -= 1
+        }
+    }
+
+    var slider: some View {
+        HStack {
+            Text("Slider: \(Int(speed))")
+                .foregroundColor(isEditing ? .gray : .black)
+            Slider(
+                value: $speed,
+                in: 0...100,
+                onEditingChanged: { editing in
+                    isEditing = editing
+                }
+            )
+        }
+    }
+
+    var progress: some View {
+        ProgressView(timerInterval: start...end,
+                     countsDown: false) {
+            Text("Progress bar")
+        } currentValueLabel: {
+            Text(start...end)
         }
     }
 
@@ -84,88 +127,10 @@ struct SwitchesView: View {
                 Image(systemName: "cloud.rainbow.half", variableValue: value)
             }
             Slider(value: $value)
+                .padding(.horizontal)
         }
         .font(.title)
         .padding()
-        .ifModifier(isColored) { view in
-            view.tint(.orange)
-        }
-    }
-
-    var summary: String {
-        dates.compactMap { components in
-            calendar.date(from: components)?.formatted(date: .long, time: .omitted)
-        }.formatted()
-    }
-
-    var pages: some View {
-        TabView {
-            Group {
-                ForEach(1..<7) { c in
-                    Text("Page \(c)")
-                }
-            }
-        }
-        .tabViewStyle(.page)
-        .frame(width: 400, height: 100)
-    }
-
-    var pagesRotated: some View {
-        TabView {
-            Group {
-                ForEach(1..<7) { c in
-                    Text("Page \(c)")
-                }
-            }
-            .rotationEffect(Angle(degrees: -90))
-            .offset(y: -20)
-
-        }
-        .rotationEffect(Angle(degrees: 90))
-        .frame(width: 400, height: 100)
-        .tabViewStyle(.page)
-    }
-
-    var stepper: some View {
-        Stepper {
-            Text("Stepper: \(value)")
-        } onIncrement: {
-            value += 1
-        } onDecrement: {
-            value -= 1
-        }
-        .ifModifier(isColored) { view in
-            view.tint(.orange)
-        }
-    }
-
-    var slider: some View {
-        HStack {
-            Text("Slider: \(Int(speed))")
-                .foregroundColor(isEditing ? .gray : .black)
-            Slider(
-                value: $speed,
-                in: 0...100,
-                onEditingChanged: { editing in
-                    isEditing = editing
-                }
-            )
-            .ifModifier(isColored) { view in
-                view.tint(.orange)
-            }
-        }
-    }
-
-    var progress: some View {
-        ProgressView(timerInterval: start...end,
-                     countsDown: false) {
-            Text("Progress bar")
-        } currentValueLabel: {
-            Text(start...end)
-        }
-        .ifModifier(isColored) { view in
-            view.tint(.orange)
-        }
     }
 
 }
