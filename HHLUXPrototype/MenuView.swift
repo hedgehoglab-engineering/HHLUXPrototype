@@ -19,6 +19,8 @@ struct MenuView: View {
                 menu
                     .symbolEffect(.bounce.down, value: backend.willFail)
                     .symbolEffect(.bounce.up, value: backend.willTimeout)
+                    .symbolEffect(.bounce.byLayer, value: backend.orangeTint)
+                    .symbolEffect(.bounce.wholeSymbol, value: backend.lightMode)
             } else {
                 menu
             }
@@ -29,6 +31,7 @@ struct MenuView: View {
                         testContextMenu
                     }
             }
+            Link(" HIG link ⤴", destination: URL(string: "https://developer.apple.com/design/human-interface-guidelines/context-menus")!)
         }
     }
 

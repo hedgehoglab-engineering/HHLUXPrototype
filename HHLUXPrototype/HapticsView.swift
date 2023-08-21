@@ -69,6 +69,7 @@ struct HapticsView: View {
                     playCustom(filename: "Oscillate")
                 }
             }
+            Link(" HIG link ⤴", destination: URL(string: "https://developer.apple.com/design/human-interface-guidelines/playing-haptics")!)
         }
     }
 

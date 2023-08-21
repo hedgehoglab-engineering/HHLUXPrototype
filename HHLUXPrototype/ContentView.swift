@@ -7,12 +7,20 @@
 
 import SwiftUI
 
+struct Proto: Identifiable {
+    private(set) var id = UUID()
+    let title: String = ""
+    let icon: String = ""
+}
 
 struct ContentView: View {
 
     //    @EnvironmentObject private var appSettings: AppSettings
     //
     //    @SceneStorage("ContentView.selectedTab")
+
+    @Environment(\.supportsMultipleWindows) private var supportsMultipleWindows
+    @Environment(\.openWindow) private var openWindow
 
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
 
@@ -21,6 +29,10 @@ struct ContentView: View {
     @State private var searchText = ""
 
     @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
+
+    @State var sectionIds: Set<Proto.ID> = [Proto().id, Proto().id]
+
+    @State private var shake: Bool = false
 
     var body: some View {
         Group {
@@ -36,7 +48,12 @@ struct ContentView: View {
                 .navigationSplitViewStyle(.balanced)
                 .navigationBarTitleDisplayMode(.inline)
             } detail: {
-
+                if #available(iOS 17.0, *) {
+                    shakeButton
+                        .symbolEffect(.bounce.byLayer, value: shake)
+                } else {
+                    shakeButton
+                }
             }
         }
         .ifModifier(backend.lightMode) { view in
@@ -47,6 +64,17 @@ struct ContentView: View {
             UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize:34, weight: .ultraLight)]
         }
 //        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
+    }
+
+    var shakeButton: some View {
+        Button (action: {
+            withAnimation {
+                shake.toggle()
+            }
+        }) {
+            Image(systemName: "square.stack.3d.forward.dottedline.fill", variableValue: shake ? 0.5 : 0.7)
+        }
+        .modifier(ShakeEffect(shakes: shake ? 2 : 0))
     }
 
     func determineGearIcon() -> String {
@@ -84,11 +112,23 @@ struct ContentView: View {
 
     var sidebarList: some View {
         List (selection: $selection) {
+            if supportsMultipleWindows {
+                Button {
+                    sectionIds.forEach { openWindow(value: $0) }
+                } label: {
+                    Label("Open in New Window", systemImage: "macwindow")
+                }
+            }
             Section {
                 sidebarList1
             }
             Section {
                 sidebarList2
+            }
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                Section {
+                    ipadList
+                }
             }
             Section {
                 NavigationLink {
@@ -97,6 +137,14 @@ struct ContentView: View {
                     Label("SF Symbols", systemImage: "apple.logo")
                 }
             }
+        }
+    }
+
+    var ipadList: some View {
+        NavigationLink {
+            MultitaskingView()
+        } label: {
+            Label("Multitasking", systemImage: "rectangle.split.2x1.fill")
         }
     }
 
