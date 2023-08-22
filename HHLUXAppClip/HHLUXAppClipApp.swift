@@ -11,9 +11,11 @@ import SwiftData
 @main
 struct HHLUXAppClipApp: App {
 
+    private var dataModel = PrototypesList()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(model: dataModel)
 //            SwiftDataExample()
         }
 //        .modelContainer(for: Item.self)

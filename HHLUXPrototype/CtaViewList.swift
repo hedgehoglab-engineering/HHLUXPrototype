@@ -25,7 +25,11 @@ struct CtaViewList: View {
             Section (header: sectionLegend){
                 List {
                     ForEach(1..<6) { _ in
-                        CtaView()
+                        if UIDevice.current.userInterfaceIdiom == .pad {
+                            CtaView().scaleEffect(0.7)
+                        } else {
+                            CtaView()
+                        }
                     }
                 }
             }
@@ -44,7 +48,6 @@ struct CtaViewList: View {
         VStack (alignment: .leading) {
             HStack {
                 Image(systemName: "heart")
-
                 Text("- standard button with no state feedback (spammable)")
             }
             HStack {

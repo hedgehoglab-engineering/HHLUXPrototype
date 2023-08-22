@@ -7,20 +7,13 @@
 
 import SwiftUI
 
-struct Proto: Identifiable {
-    private(set) var id = UUID()
-    let title: String = ""
-    let icon: String = ""
-}
-
 struct ContentView: View {
 
     //    @EnvironmentObject private var appSettings: AppSettings
     //
     //    @SceneStorage("ContentView.selectedTab")
 
-    @Environment(\.supportsMultipleWindows) private var supportsMultipleWindows
-    @Environment(\.openWindow) private var openWindow
+    @ObservedObject var model: PrototypesList
 
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
 
@@ -29,8 +22,6 @@ struct ContentView: View {
     @State private var searchText = ""
 
     @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
-
-    @State var sectionIds: Set<Proto.ID> = [Proto().id, Proto().id]
 
     @State private var shake: Bool = false
 
@@ -109,113 +100,34 @@ struct ContentView: View {
         })
     }
 
-
     var sidebarList: some View {
         List (selection: $selection) {
-            if supportsMultipleWindows {
-                Button {
-                    sectionIds.forEach { openWindow(value: $0) }
-                } label: {
-                    Label("Open in New Window", systemImage: "macwindow")
+            Section {
+                ForEach (model[category: .primary]) {
+                    ProtoypeLink(type: $0)
                 }
             }
             Section {
-                sidebarList1
+                ForEach (model[category: .secondary]) {
+                    ProtoypeLink(type: $0)
+                }
             }
             Section {
-                sidebarList2
+                ForEach (model[category: .extra]) {
+                    ProtoypeLink(type: $0)
+                }
             }
             if UIDevice.current.userInterfaceIdiom == .pad {
                 Section {
-                    ipadList
+                    ForEach (model[category: .ipad]) {
+                        ProtoypeLink(type: $0)
+                    }
                 }
             }
-            Section {
-                NavigationLink {
-                    SymbolsView()
-                } label: {
-                    Label("SF Symbols", systemImage: "apple.logo")
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Section {
+                    ProtoypeLink(type: .haptics)
                 }
-            }
-        }
-    }
-
-    var ipadList: some View {
-        NavigationLink {
-            MultitaskingView()
-        } label: {
-            Label("Multitasking", systemImage: "rectangle.split.2x1.fill")
-        }
-    }
-
-    var sidebarList1: some View {
-        Group {
-            NavigationLink {
-                CtaViewList()
-            } label: {
-                Label("Buttons", systemImage: "rectangle.and.hand.point.up.left")
-            }
-            NavigationLink {
-                SelectorsView()
-            } label: {
-                Label("Selectors", systemImage: "checklist")
-            }
-            NavigationLink {
-                SwitchesView()
-            } label: {
-                Label("Switches, sliders, gauges", systemImage: "switch.2")
-            }
-            NavigationLink {
-                PickersView()
-            } label: {
-                Label("Pickers, Pages, share", systemImage: "eyedropper")
-            }
-            NavigationLink {
-                InputView()
-            } label: {
-                Label("Text input", systemImage: "rectangle.and.pencil.and.ellipsis")
-            }
-            NavigationLink {
-                PopupsView()
-            } label: {
-                Label("Popups", systemImage: "rectangle.on.rectangle.angled")
-            }
-            if #available(iOS 17.0, *) {
-                NavigationLink {
-                    TipsView()
-                } label: {
-                    Label("Tips", systemImage: "rectangle.3.group.bubble.left.fill")
-                }
-            }
-            NavigationLink {
-                ListsView()
-            } label: {
-                Label("Lists", systemImage: "list.bullet.rectangle")
-            }
-        }
-    }
-
-    var sidebarList2: some View {
-        Group {
-            NavigationLink {
-                MenuView()
-            } label: {
-                Label("Menus", systemImage: "filemenu.and.selection")
-            }
-            NavigationLink {
-                HapticsView()
-            } label: {
-                Label("Haptics", systemImage: "hand.tap")
-            }
-            NavigationLink {
-                LoadView()
-            } label: {
-                Label("Loading", systemImage: "arrow.clockwise.icloud")
-            }
-            NavigationLink {
-                StatesView()
-            } label: {
-                Label("States", systemImage: "checkmark.circle.trianglebadge.exclamationmark")
             }
         }
     }
@@ -224,12 +136,13 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        let model = PrototypesList()
         Group {
-            ContentView()
+            ContentView(model: model)
                 .environment(\.colorScheme, .light)
                 .previewDisplayName("Default")
 
-            ContentView()
+            ContentView(model: model)
                 .environment(\.colorScheme, .dark)
                 .previewDisplayName("Dark Mode")
 

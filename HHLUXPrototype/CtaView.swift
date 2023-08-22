@@ -30,7 +30,7 @@ struct CtaView: View {
     }
 
     var body: some View {
-        HStack (spacing: 30) {
+        HStack (alignment: .center, spacing: 30) {
             fav1
                 .environment(\.isEnabled, !favorite1.isDisabled)
             fav4

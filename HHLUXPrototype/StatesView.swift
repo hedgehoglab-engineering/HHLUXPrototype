@@ -9,7 +9,6 @@ import SwiftUI
 
 struct StatesView: View {
 
-
     var body: some View {
         List {
             Section("Ready") {

@@ -10,12 +10,13 @@ import SwiftUI
 @main
 struct HHLUXPrototypeApp: App {
 
+    private var dataModel = PrototypesList()
     @StateObject private var appSettings = AppSettings()
     @UIApplicationDelegateAdaptor var delegate: HHLAppDelegate
 
     var body: some Scene {
         WindowGroup("Prototypes List") {
-            ContentView()
+            ContentView(model: dataModel)
                 .environmentObject(appSettings)
                 .task(priority: .medium) {
                     await appSettings.load()
@@ -24,19 +25,8 @@ struct HHLUXPrototypeApp: App {
         .commands {
             SidebarCommands()
         }
-        WindowGroup("Prototypes Details", for: Proto.ID.self) { $protoId in
-            ProtoWindow(protoId: $protoId)
+        WindowGroup("Prototypes Details", for: Prototype.ID.self) { $protoId in
+            ProtoWindow(model: dataModel, protoId: $protoId)
         }
     }
-}
-
-struct ProtoWindow: View {
-    @Binding var protoId: Proto.ID?
-
-    var body: some View {
-        if let protoId = protoId{
-            Text(protoId.description)
-        }
-    }
-
 }
