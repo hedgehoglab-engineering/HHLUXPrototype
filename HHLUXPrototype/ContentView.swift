@@ -23,6 +23,8 @@ struct ContentView: View {
 
     @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
 
+    @Environment(\.openWindow) private var openWindow
+
     @State private var shake: Bool = false
 
     var body: some View {
@@ -51,10 +53,17 @@ struct ContentView: View {
             view.colorScheme(.light)
         }
         .onAppear {
-            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont.systemFont(ofSize: 20, weight: .ultraLight)]
-            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize:34, weight: .ultraLight)]
+            if let selection = SimulatedBackendSingleton.sharedInstance.selection {
+                openWindow(value: selection)
+            }
+            setAppearance()
         }
 //        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
+    }
+
+    func setAppearance() {
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont.systemFont(ofSize: 20, weight: .ultraLight)]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize:34, weight: .ultraLight)]
     }
 
     var shakeButton: some View {

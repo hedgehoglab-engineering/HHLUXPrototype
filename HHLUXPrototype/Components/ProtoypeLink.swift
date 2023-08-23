@@ -14,6 +14,8 @@ struct ProtoypeLink: View {
 
     @State var type: Prototype
 
+    @State var persistent = false
+
     var body: some View {
         NavigationLink {
             type.view
@@ -22,7 +24,7 @@ struct ProtoypeLink: View {
         }
         .ifModifier(supportsMultipleWindows) { view in
             view.contextMenu {
-                Label("multitasking", systemImage: "rectangle.badge.plus")
+                Label("Multitasking", systemImage: "rectangle.badge.plus")
                 Button {
                     openWindow(value: type)
                 } label: {
@@ -33,10 +35,39 @@ struct ProtoypeLink: View {
                 } label: {
                     Label("Open in Center Window", systemImage: "rectangle.center.inset.filled")
                 }
-                Label("shortcuts", systemImage: "apps.iphone")
-                Toggle("App icon shortcut", isOn: .constant(true))
+                Label("Shortcuts", systemImage: "apps.iphone")
+                Toggle("App icon shortcut", isOn: $persistent)
+                    .onChange(of: persistent) { _ in
+                        changeSetting()
+                    }
             }
         }
+        .onAppear {
+            readSetting()
+        }
+    }
+
+    func readSetting() {
+        let defaults = UserDefaults.standard
+        guard let list = defaults.value(forKey: "shortcutItems") as? [String] else { return }
+        if list.contains(type.rawValue) {
+            persistent = true
+        }
+    }
+
+    func changeSetting() {
+        let defaults = UserDefaults.standard
+        var list = defaults.value(forKey: "shortcutItems") as? [String] ?? [String]()
+        if persistent {
+            if !list.contains(type.rawValue) {
+                list.append(type.rawValue)
+            }
+        } else {
+            list = list.filter {
+                $0 != type.rawValue
+            }
+        }
+        defaults.setValue(list, forKey: "shortcutItems")
     }
 
 }

@@ -58,7 +58,7 @@ enum Category: Int, CaseIterable, Codable, Identifiable {
     }
 }
 
-enum Prototype: Int, CaseIterable, Codable, Identifiable {
+enum Prototype: String, CaseIterable, Codable, Identifiable {
     case buttons
     case selectors
     case switches
@@ -138,10 +138,15 @@ enum Prototype: Int, CaseIterable, Codable, Identifiable {
 extension Prototype {
 
     func makeShortcut() -> UIApplicationShortcutItem {
-        UIApplicationShortcutItem(type: rawValue.description, localizedTitle: title, localizedSubtitle: "",
+        UIApplicationShortcutItem(type: rawValue, localizedTitle: title, localizedSubtitle: "",
                                   icon: UIApplicationShortcutIcon(systemImageName: iconName),
                                   userInfo: [HHLSceneDelegate.favoriteIdentifierInfoKey: rawValue as NSSecureCoding])
     }
+
+    init?(shortcut: UIApplicationShortcutItem) {
+        self.init(rawValue: shortcut.type)
+    }
+    
 }
 
 extension Collection where Element == Prototype {
