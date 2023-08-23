@@ -25,6 +25,8 @@ struct ContentView: View {
 
     @Environment(\.openWindow) private var openWindow
 
+    @Environment(\.scenePhase) var scenePhase
+
     @State private var shake: Bool = false
 
     var body: some View {
@@ -53,12 +55,21 @@ struct ContentView: View {
             view.colorScheme(.light)
         }
         .onAppear {
-            if let selection = SimulatedBackendSingleton.sharedInstance.selection {
-                openWindow(value: selection)
-            }
             setAppearance()
         }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                openShortcut()
+            }
+        }
 //        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
+    }
+
+    func openShortcut() {
+        if let selection = SimulatedBackendSingleton.sharedInstance.selection {
+            openWindow(value: selection)
+            SimulatedBackendSingleton.sharedInstance.selection = nil
+        }
     }
 
     func setAppearance() {

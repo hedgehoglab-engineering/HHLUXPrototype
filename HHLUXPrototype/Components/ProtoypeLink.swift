@@ -67,6 +67,9 @@ struct ProtoypeLink: View {
                 $0 != type.rawValue
             }
         }
+        if list.count > 4 {
+            list.removeFirst()
+        }
         defaults.setValue(list, forKey: "shortcutItems")
     }
 
