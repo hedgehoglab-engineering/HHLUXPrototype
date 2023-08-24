@@ -24,7 +24,6 @@
 		F5043AF22A8CC659003E18B3 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E668DE2A878A9E000FE2BF /* View+Extension.swift */; };
 		F5043AF32A8CC659003E18B3 /* SimulatedBackendSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BD2A8B88EC0053324A /* SimulatedBackendSingleton.swift */; };
 		F5043AF42A8CC659003E18B3 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FE92A84E77400260BA5 /* AppSettings.swift */; };
-		F5043AF52A8CC667003E18B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FD52A84DF7F00260BA5 /* ContentView.swift */; };
 		F5043AF62A8CC667003E18B3 /* SymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FE22A84E24E00260BA5 /* SymbolsView.swift */; };
 		F5043AF72A8CC667003E18B3 /* CtaViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BB2A8B7A150053324A /* CtaViewList.swift */; };
 		F5043AF82A8CC667003E18B3 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FF62A85996200260BA5 /* InputView.swift */; };
@@ -52,6 +51,8 @@
 		F53271C02A8BB29C0053324A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53271BF2A8BB29C0053324A /* SettingsView.swift */; };
 		F553E7302A8E7022003AAF8C /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553E72F2A8E7022003AAF8C /* TipsView.swift */; };
 		F553E7312A8E711A003AAF8C /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553E72F2A8E7022003AAF8C /* TipsView.swift */; };
+		F57F2BB82A97863600F8F4D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FA0FD52A84DF7F00260BA5 /* ContentView.swift */; };
+		F57F2BB92A9789CB00F8F4D1 /* ProtoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B382D2A94C0F600EB7962 /* ProtoWindow.swift */; };
 		F58B38282A94A46E00EB7962 /* PrototypesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B38272A94A46E00EB7962 /* PrototypesList.swift */; };
 		F58B38292A94A95B00EB7962 /* PrototypesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B38272A94A46E00EB7962 /* PrototypesList.swift */; };
 		F58B382B2A94C03D00EB7962 /* ProtoypeLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B382A2A94C03D00EB7962 /* ProtoypeLink.swift */; };
@@ -559,7 +560,6 @@
 			files = (
 				F5043AF42A8CC659003E18B3 /* AppSettings.swift in Sources */,
 				F5043AFA2A8CC667003E18B3 /* LoadViewModel.swift in Sources */,
-				F5043AF52A8CC667003E18B3 /* ContentView.swift in Sources */,
 				F5043AF92A8CC667003E18B3 /* PopupsView.swift in Sources */,
 				F553E7312A8E711A003AAF8C /* TipsView.swift in Sources */,
 				F5043AFB2A8CC667003E18B3 /* SettingsView.swift in Sources */,
@@ -581,6 +581,8 @@
 				F58B38292A94A95B00EB7962 /* PrototypesList.swift in Sources */,
 				F5043AEF2A8CC659003E18B3 /* ButtonStyles.swift in Sources */,
 				F5043AF22A8CC659003E18B3 /* View+Extension.swift in Sources */,
+				F57F2BB82A97863600F8F4D1 /* ContentView.swift in Sources */,
+				F57F2BB92A9789CB00F8F4D1 /* ProtoWindow.swift in Sources */,
 				F5043B022A8CC667003E18B3 /* StatesView.swift in Sources */,
 				F5C956E92A8E313A00EC2054 /* PickersView.swift in Sources */,
 				F59E33812A93988000AD3636 /* HHLAppDelegate.swift in Sources */,

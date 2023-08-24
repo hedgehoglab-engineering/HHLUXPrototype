@@ -11,6 +11,8 @@ struct SwitchesView: View {
 
     @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
 
+    @EnvironmentObject private var appSettings: AppSettings
+
     let start = Date().addingTimeInterval(-360)
     let end = Date().addingTimeInterval(360)
 
@@ -25,9 +27,9 @@ struct SwitchesView: View {
         List {
             Section {
                 VStack (alignment: .leading) {
-                    Toggle("Switch Toggle (orange tint)", isOn: $backend.orangeTint)
+                    Toggle("Switch Toggle (orange tint)", isOn: $appSettings.defaults.orangeTint)
                         .toggleStyle(.switch)
-                    Toggle("Button Toggle (orange tint)", isOn: $backend.orangeTint)
+                    Toggle("Button Toggle (orange tint)", isOn: $appSettings.defaults.orangeTint)
                         .toggleStyle(.button)
                 }
             }
@@ -47,7 +49,7 @@ struct SwitchesView: View {
                 symbols
             }
         }
-        .ifModifier(backend.orangeTint) { view in
+        .ifModifier(appSettings.defaults.orangeTint) { view in
             view.tint(.orange)
         }
     }

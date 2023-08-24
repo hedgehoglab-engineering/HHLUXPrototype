@@ -31,7 +31,7 @@ struct ProtoypeLink: View {
                     Label("Open in New Window", systemImage: "rectangle.righthalf.inset.filled")
                 }
                 Button {
-                    openWindow(value: type)
+                    openCenter(value: type)
                 } label: {
                     Label("Open in Center Window", systemImage: "rectangle.center.inset.filled")
                 }
@@ -71,6 +71,16 @@ struct ProtoypeLink: View {
             list.removeFirst()
         }
         defaults.setValue(list, forKey: "shortcutItems")
+    }
+
+    func openCenter(value: Prototype) {
+        let options = UIWindowScene.ActivationRequestOptions()
+        options.preferredPresentationStyle = .prominent
+        let userActivity = NSUserActivity(activityType: value.rawValue)
+        userActivity.persistentIdentifier = value.rawValue
+        UIApplication.shared.requestSceneSessionActivation(nil, userActivity: userActivity, options: options) { error in
+            print(error)
+        }
     }
 
 }

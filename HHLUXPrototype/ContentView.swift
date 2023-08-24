@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
 
-    //    @EnvironmentObject private var appSettings: AppSettings
-    //
-    //    @SceneStorage("ContentView.selectedTab")
+//    @SceneStorage("ContentView.selectedTab")
+
+    @UIApplicationDelegateAdaptor(HHLAppDelegate.self) var delegate
+
+    @EnvironmentObject private var appSettings: AppSettings
 
     @ObservedObject var model: PrototypesList
 
@@ -30,28 +32,8 @@ struct ContentView: View {
     @State private var shake: Bool = false
 
     var body: some View {
-        Group {
-            NavigationSplitView(columnVisibility: $columnVisibility) {
-                VStack {
-                    sidebarList
-                    Spacer()
-                    footer
-                    Spacer()
-                }
-                .background(Color(UIColor.systemGroupedBackground))
-                .navigationTitle("HHLUXPrototype")
-                .navigationSplitViewStyle(.balanced)
-                .navigationBarTitleDisplayMode(.inline)
-            } detail: {
-                if #available(iOS 17.0, *) {
-                    shakeButton
-                        .symbolEffect(.bounce.byLayer, value: shake)
-                } else {
-                    shakeButton
-                }
-            }
-        }
-        .ifModifier(backend.lightMode) { view in
+        splitView
+            .ifModifier(appSettings.defaults.lightMode) { view in
             view.colorScheme(.light)
         }
         .onAppear {
@@ -59,16 +41,39 @@ struct ContentView: View {
         }
         .onChange(of: scenePhase) { newPhase in
             if newPhase == .active {
-                openShortcut()
+                openScene()
             }
         }
 //        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
     }
 
-    func openShortcut() {
-        if let selection = SimulatedBackendSingleton.sharedInstance.selection {
-            openWindow(value: selection)
-            SimulatedBackendSingleton.sharedInstance.selection = nil
+    var splitView: some View {
+        NavigationSplitView(columnVisibility: $columnVisibility) {
+            VStack {
+                sidebarList
+                Spacer()
+                footer
+                Spacer()
+            }
+            .background(Color(UIColor.systemGroupedBackground))
+            .navigationTitle("HHLUXPrototype")
+            .navigationSplitViewStyle(.balanced)
+            .navigationBarTitleDisplayMode(.inline)
+        } detail: {
+            if #available(iOS 17.0, *) {
+                shakeButton
+                    .symbolEffect(.bounce.byLayer, value: shake)
+            } else {
+                shakeButton
+            }
+        }
+    }
+
+    @MainActor
+    func openScene() {
+        if let shortcut = delegate.sideLoad {
+            openWindow(value: shortcut)
+            delegate.sideLoad = nil
         }
     }
 

@@ -9,11 +9,20 @@ import SwiftUI
 
 class HHLAppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
 
+    @Published var sideLoad: Prototype?
+
+    @Published var centerLoad: Prototype?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil  ) -> Bool {
 
         setDefaultItems()
 
         return true
+    }
+
+    func application( _ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        sideLoad = nil
+        centerLoad = nil
     }
 
     func setDefaultItems() {
@@ -32,7 +41,14 @@ class HHLAppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         let sceneConfig = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
         sceneConfig.delegateClass = HHLSceneDelegate.self
+        if !options.userActivities.isEmpty {
+//            does not seem to work, the storyboard is never loaded
+//            sceneConfig.sceneClass = ProtoWindowController.self
+//            sceneConfig.storyboard = UIStoryboard(name: "Prototype", bundle: nil)
+        }
         return sceneConfig
     }
+
+
 }
 

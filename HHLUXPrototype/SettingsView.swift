@@ -11,12 +11,14 @@ struct SettingsView: View {
 
     @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
 
+    @EnvironmentObject private var appSettings: AppSettings
+
     @State private var shake: Bool = false
 
     var body: some View {
         Group {
-            Toggle("Orange tint", isOn: $backend.orangeTint)
-            Toggle("Force light mode", isOn: $backend.lightMode)
+            Toggle("Orange tint", isOn: $appSettings.defaults.orangeTint)
+            Toggle("Force light mode", isOn: $appSettings.defaults.lightMode)
             Toggle("Force backend failure", isOn: $backend.willFail)
             Toggle("Force backend timeout", isOn: $backend.willTimeout)
             stepper

@@ -6,12 +6,11 @@
 //
 
 import UIKit
+import SwiftUI
 
 class HHLSceneDelegate: NSObject, UIWindowSceneDelegate, ObservableObject {
 
-    static var favoriteIdentifierInfoKey: String = "shortcutProtoId"
-//
-//    var shortcutItem: UIApplicationShortcutItem?
+    @UIApplicationDelegateAdaptor(HHLAppDelegate.self) var delegate
 
     func sceneWillEnterForeground(_ scene: UIScene) {
 
@@ -26,14 +25,12 @@ class HHLSceneDelegate: NSObject, UIWindowSceneDelegate, ObservableObject {
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//        /** Process the quick action if the user selected one to launch the app.
-//            Grab a reference to the shortcutItem to use in the scene.
-//        */
-//        if let shortcutItem = connectionOptions.shortcutItem {
-//            // Save it off for later when we become active.
-//            self.shortcutItem = shortcutItem
-//            print(shortcutItem)
-//        }
+        if let activity = connectionOptions.userActivities.first {
+            if let type = Prototype(activity: activity) {
+                delegate.centerLoad = type
+                print("Center new screen: " + type.rawValue)
+            }
+        }
     }
 
     func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
@@ -43,7 +40,8 @@ class HHLSceneDelegate: NSObject, UIWindowSceneDelegate, ObservableObject {
 
     func handleShortCutItem(_ item: UIApplicationShortcutItem) -> Bool {
         if let type = Prototype(shortcut: item) {
-            SimulatedBackendSingleton.sharedInstance.selection = type
+            delegate.sideLoad = type
+            print("Split new screen: " + type.rawValue)
             return true
         }
         return false

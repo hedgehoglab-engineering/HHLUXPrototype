@@ -9,7 +9,12 @@ import UIKit
 
 
 struct AppDefaults: Codable, Equatable {
-    var name: String
+
+    var name: String 
+
+    var lightMode = true
+
+    var orangeTint = false
 }
 
 extension AppDefaults {
@@ -20,8 +25,9 @@ extension AppDefaults {
 @MainActor class AppSettings: ObservableObject {
     
     @Published var defaults = AppDefaults.standard
-    private let settingsIO = SettingsIO()
     
+    private let settingsIO = SettingsIO()
+
 }
 
 // MARK: - AppSettings API

@@ -140,13 +140,17 @@ extension Prototype {
     func makeShortcut() -> UIApplicationShortcutItem {
         UIApplicationShortcutItem(type: rawValue, localizedTitle: title, localizedSubtitle: "",
                                   icon: UIApplicationShortcutIcon(systemImageName: iconName),
-                                  userInfo: [HHLSceneDelegate.favoriteIdentifierInfoKey: rawValue as NSSecureCoding])
+                                  userInfo: nil)
     }
 
     init?(shortcut: UIApplicationShortcutItem) {
         self.init(rawValue: shortcut.type)
     }
-    
+
+    init?(activity: NSUserActivity) {
+        self.init(rawValue: activity.activityType)
+    }
+
 }
 
 extension Collection where Element == Prototype {

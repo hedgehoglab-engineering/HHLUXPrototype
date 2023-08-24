@@ -13,14 +13,16 @@ struct MenuView: View {
 
     @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
 
+    @EnvironmentObject private var appSettings: AppSettings
+
     var body: some View {
         ScrollView {
             if #available(iOS 17.0, *) {
                 menu
                     .symbolEffect(.bounce.down, value: backend.willFail)
                     .symbolEffect(.bounce.up, value: backend.willTimeout)
-                    .symbolEffect(.bounce.byLayer, value: backend.orangeTint)
-                    .symbolEffect(.bounce.wholeSymbol, value: backend.lightMode)
+                    .symbolEffect(.bounce.byLayer, value: appSettings.defaults.orangeTint)
+                    .symbolEffect(.bounce.wholeSymbol, value: appSettings.defaults.lightMode)
             } else {
                 menu
             }

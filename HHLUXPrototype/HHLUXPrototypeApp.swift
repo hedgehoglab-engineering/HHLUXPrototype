@@ -16,17 +16,34 @@ struct HHLUXPrototypeApp: App {
 
     var body: some Scene {
         WindowGroup("Prototypes List") {
-            ContentView(model: dataModel)
-                .environmentObject(appSettings)
-                .task(priority: .medium) {
-                    await appSettings.load()
-                }
+            if delegate.sideLoad != nil {
+                content
+            } else if delegate.centerLoad != nil {
+                ProtoWindow(model: dataModel, proto: .constant(delegate.centerLoad))
+                    .environmentObject(appSettings)
+                    .onAppear {
+                        delegate.centerLoad = nil
+                    }
+            } else {
+                content
+            }
         }
+        .handlesExternalEvents(matching: ["texturl://open"])
         .commands {
             SidebarCommands()
         }
-        WindowGroup("Prototypes Details", for: Prototype.ID.self) { $protoId in
-            ProtoWindow(model: dataModel, protoId: $protoId)
+        WindowGroup("Prototypes Details", for: Prototype.self) { $proto in
+            ProtoWindow(model: dataModel, proto: $proto)
+                .environmentObject(appSettings)
         }
     }
+
+    var content: some View {
+        ContentView(model: dataModel)
+            .environmentObject(appSettings)
+            .task(priority: .medium) {
+                await appSettings.load()
+            }
+    }
+
 }
