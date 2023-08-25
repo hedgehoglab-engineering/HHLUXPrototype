@@ -19,8 +19,6 @@ struct ContentView: View {
 
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
 
-    @State private var selection: Int?
-
     @State private var searchText = ""
 
     @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
@@ -31,9 +29,17 @@ struct ContentView: View {
 
     @State private var shake: Bool = false
 
+    @State private var centeredPrototype: Prototype?
+
     var body: some View {
-        splitView
-            .ifModifier(appSettings.defaults.lightMode) { view in
+        Group {
+            if centeredPrototype != nil {
+                centeredPrototype?.view
+            } else {
+                splitView
+            }
+        }
+        .ifModifier(appSettings.defaults.lightMode) { view in
             view.colorScheme(.light)
         }
         .onAppear {
@@ -43,6 +49,42 @@ struct ContentView: View {
             if newPhase == .active {
                 openScene()
             }
+        }
+        .onContinueUserActivity(Prototype.buttons.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.selectors.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.switches.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.pickers.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.input.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.popups.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.tips.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.lists.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.menus.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.loading.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.states.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
+        }
+        .onContinueUserActivity(Prototype.symbols.rawValue) { activity in
+            centeredPrototype = Prototype(activity: activity)
         }
 //        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
     }
@@ -126,7 +168,7 @@ struct ContentView: View {
     }
 
     var sidebarList: some View {
-        List (selection: $selection) {
+        List {
             Section {
                 ForEach (model[category: .primary]) {
                     ProtoypeLink(type: $0)

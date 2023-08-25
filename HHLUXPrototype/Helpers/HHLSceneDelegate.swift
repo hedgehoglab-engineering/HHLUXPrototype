@@ -27,7 +27,6 @@ class HHLSceneDelegate: NSObject, UIWindowSceneDelegate, ObservableObject {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if let activity = connectionOptions.userActivities.first {
             if let type = Prototype(activity: activity) {
-                delegate.centerLoad = type
                 print("Center new screen: " + type.rawValue)
             }
         }

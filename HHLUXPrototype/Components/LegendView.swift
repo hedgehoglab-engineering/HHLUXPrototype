@@ -33,12 +33,6 @@ struct LegendView: View {
             .opacity(0.1)
             Spacer()
         }
-        .sheet(isPresented: $isShowingLegend) {
-            Group {
-                legendLabel
-            }
-            .presentationDetents([.medium, .large])
-        }
     }
 
     var body: some View {
@@ -47,6 +41,12 @@ struct LegendView: View {
             buttonScale
             buttonStyle
             buttonColor
+        }
+        .sheet(isPresented: $isShowingLegend) {
+            Group {
+                legendLabel
+            }
+            .presentationDetents([.medium, .large])
         }
         .foregroundColor(.secondary)
         .opacity(0.2)

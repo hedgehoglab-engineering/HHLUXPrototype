@@ -90,19 +90,6 @@ struct ListsView: View {
                 .frame(height: 200)
                 .listRowBackground(Color.clear)
             }
-            Section (header: makeLegend(label: "inset sections")) {
-                List {
-                    Section("section one") {
-                        Text("one")
-                    }
-                    Section("section two") {
-                        Text("two")
-                    }
-                }
-                .listStyle(.inset)
-                .frame(height: 200)
-                .listRowBackground(Color.clear)
-            }
             Section (header: makeLegend(label: "plain sections")) {
                 List {
                     Section("section one") {
@@ -113,6 +100,19 @@ struct ListsView: View {
                     }
                 }
                 .listStyle(.plain)
+                .frame(height: 200)
+                .listRowBackground(Color.clear)
+            }
+            Section (header: makeLegend(label: "inset sections")) {
+                List {
+                    Section("section one") {
+                        Text("one")
+                    }
+                    Section("section two") {
+                        Text("two")
+                    }
+                }
+                .listStyle(.inset)
                 .frame(height: 200)
                 .listRowBackground(Color.clear)
             }
@@ -148,19 +148,13 @@ struct ListsView: View {
                 NavigationLink {
                     Text("content one")
                 } label: {
-                    Label("one", systemImage: "1")
+                    Label("one", systemImage: "1.circle")
                 }
                 NavigationLink {
                     Text("content two")
                 } label: {
-                    Label("two", systemImage: "2")
+                    Label("two", systemImage: "2.circle")
                 }
-            }
-        } content: {
-            if #available(iOS 17.0, *) {
-                ContentUnavailableView("Use sidebar navigation", systemImage: "sidebar.left")
-            } else {
-                Label("Use sidebar navigation", systemImage: "sidebar.left")
             }
         } detail: {
             if #available(iOS 17.0, *) {
@@ -176,5 +170,6 @@ struct ListsView: View {
 struct ListsView_Previews: PreviewProvider {
     static var previews: some View {
         ListsView()
+            .environmentObject(AppSettings())
     }
 }

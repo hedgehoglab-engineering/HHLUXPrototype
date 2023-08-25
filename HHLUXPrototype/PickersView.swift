@@ -85,4 +85,5 @@ struct PickersView: View {
 
 #Preview {
     PickersView()
+        .environmentObject(AppSettings())
 }

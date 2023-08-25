@@ -59,12 +59,14 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         List {
             SettingsView()
+
             Menu(content: {
                 SettingsView()
             }, label: {
                 Label("Settings", systemImage: "gear")
             })
         }
+        .environmentObject(AppSettings())
     }
 }
 

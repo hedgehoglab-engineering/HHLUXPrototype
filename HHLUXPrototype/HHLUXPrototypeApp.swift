@@ -15,35 +15,27 @@ struct HHLUXPrototypeApp: App {
     @UIApplicationDelegateAdaptor var delegate: HHLAppDelegate
 
     var body: some Scene {
-        WindowGroup("Prototypes List") {
-            if delegate.sideLoad != nil {
-                content
-            } else if delegate.centerLoad != nil {
-                ProtoWindow(model: dataModel, proto: .constant(delegate.centerLoad))
-                    .environmentObject(appSettings)
-                    .onAppear {
-                        delegate.centerLoad = nil
-                    }
-            } else {
-                content
-            }
+        WindowGroup("Prototypes with Menu") {
+            ContentView(model: dataModel)
+                .environmentObject(appSettings)
+                .task(priority: .medium) {
+                    await appSettings.load()
+                }
         }
-        .handlesExternalEvents(matching: ["texturl://open"])
-        .commands {
-            SidebarCommands()
-        }
-        WindowGroup("Prototypes Details", for: Prototype.self) { $proto in
+        .commands { SidebarCommands() }
+        .handlesExternalEvents(matching: ["hhlink://menu"])
+
+//        WindowGroup("Prototypes Details (center)") {
+//            ProtoWindow(model: dataModel, proto: .constant(delegate.centerLoad))
+//                .environmentObject(appSettings)
+//        }
+//        .handlesExternalEvents(matching: ["hhlink://center"])
+
+        WindowGroup("Prototypes Details (side)", for: Prototype.self) { $proto in
             ProtoWindow(model: dataModel, proto: $proto)
                 .environmentObject(appSettings)
         }
-    }
-
-    var content: some View {
-        ContentView(model: dataModel)
-            .environmentObject(appSettings)
-            .task(priority: .medium) {
-                await appSettings.load()
-            }
+        .handlesExternalEvents(matching: ["hhlink://side"])
     }
 
 }

@@ -11,8 +11,6 @@ class HHLAppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
 
     @Published var sideLoad: Prototype?
 
-    @Published var centerLoad: Prototype?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil  ) -> Bool {
 
         setDefaultItems()
@@ -21,8 +19,7 @@ class HHLAppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     }
 
     func application( _ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        sideLoad = nil
-        centerLoad = nil
+        self.sideLoad = nil
     }
 
     func setDefaultItems() {

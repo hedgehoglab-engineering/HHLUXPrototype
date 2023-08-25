@@ -163,6 +163,7 @@
 		F59E337A2A93925C00AD3636 /* MultitaskingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultitaskingView.swift; sourceTree = "<group>"; };
 		F59E337F2A93987300AD3636 /* HHLAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLAppDelegate.swift; sourceTree = "<group>"; };
 		F59E33822A93999700AD3636 /* HHLSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHLSceneDelegate.swift; sourceTree = "<group>"; };
+		F5A42C9C2A98B66C00AD612C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5C956E72A8E2F7200EC2054 /* PickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickersView.swift; sourceTree = "<group>"; };
 		F5E668DE2A878A9E000FE2BF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		F5E668E02A87D525000FE2BF /* NativeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeColor.swift; sourceTree = "<group>"; };
@@ -338,6 +339,7 @@
 				F5FA0FD72A84DF8000260BA5 /* Assets.xcassets */,
 				F5E668E82A8A1CB4000FE2BF /* AHAP */,
 				F5FA0FD92A84DF8000260BA5 /* HHLUXPrototype.entitlements */,
+				F5A42C9C2A98B66C00AD612C /* Info.plist */,
 				F5FA0FDA2A84DF8000260BA5 /* Preview Content */,
 			);
 			path = HHLUXPrototype;

@@ -168,5 +168,6 @@ struct SelectorsView: View {
 struct SelectorsView_Previews: PreviewProvider {
     static var previews: some View {
         SelectorsView()
+            .environmentObject(AppSettings())
     }
 }

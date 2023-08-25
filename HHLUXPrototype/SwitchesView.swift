@@ -140,5 +140,6 @@ struct SwitchesView: View {
 struct SwitchesView_Previews: PreviewProvider {
     static var previews: some View {
         SwitchesView()
+            .environmentObject(AppSettings())
     }
 }

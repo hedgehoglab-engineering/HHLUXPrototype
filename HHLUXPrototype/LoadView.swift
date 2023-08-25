@@ -13,6 +13,9 @@ struct LoadView: View {
 
     var body: some View {
         ScrollView {
+            Text("This shows a pagination loader that is loading new pages every second, you can also drag down to force a reload.")
+            .font(.caption2)
+            .foregroundColor(.secondary)
             ForEach(viewModel.items) { item in
                 CtaView()
                     .onAppear {

@@ -12,6 +12,8 @@ struct ProtoypeLink: View {
     @Environment(\.supportsMultipleWindows) private var supportsMultipleWindows
     @Environment(\.openWindow) private var openWindow
 
+    @UIApplicationDelegateAdaptor(HHLAppDelegate.self) var delegate
+
     @State var type: Prototype
 
     @State var persistent = false
@@ -75,9 +77,12 @@ struct ProtoypeLink: View {
 
     func openCenter(value: Prototype) {
         let options = UIWindowScene.ActivationRequestOptions()
-        options.preferredPresentationStyle = .prominent
+        if #available(iOS 17.0, *) {
+            options.placement = UIWindowSceneProminentPlacement()
+        } else {
+            options.preferredPresentationStyle = .prominent
+        }
         let userActivity = NSUserActivity(activityType: value.rawValue)
-        userActivity.persistentIdentifier = value.rawValue
         UIApplication.shared.requestSceneSessionActivation(nil, userActivity: userActivity, options: options) { error in
             print(error)
         }
