@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SettingsView: View {
 
@@ -22,6 +23,8 @@ struct SettingsView: View {
             Toggle("Force backend failure", isOn: $backend.willFail)
             Toggle("Force backend timeout", isOn: $backend.willTimeout)
             stepper
+            Text("SwiftUI \(Bundle.main.swiftuiVersionNumber)")
+                .font(.footnote)
             if #available(iOS 17.0, *) {
                 label
                     .symbolEffect(.bounce.down, value: backend.delayValue)
@@ -50,7 +53,9 @@ struct SettingsView: View {
     }
 
     var label: some View {
-        Label("v1.0 build 6", systemImage: "app.dashed")
+        let version = Bundle.main.releaseVersionNumber
+        let build = Bundle.main.buildVersionNumber
+        return Label("v\(version) build \(build)", systemImage: "app.dashed")
     }
 
 }
