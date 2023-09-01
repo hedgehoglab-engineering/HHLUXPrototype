@@ -2,7 +2,7 @@
 //  PrototypesList.swift
 //  HHLUXPrototype
 //
-//  Created by vlad on 22/08/2023.
+//  Created by Vlad Alexa on 22/08/2023.
 //
 
 import SwiftUI

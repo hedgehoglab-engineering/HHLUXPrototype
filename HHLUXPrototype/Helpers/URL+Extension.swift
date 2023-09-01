@@ -1,5 +1,5 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See APPLE_LICENSE.txt for licensing information.
 
 Abstract:
 URL Extension to fetch location of files and folders used to persist App data

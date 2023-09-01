@@ -1,5 +1,5 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+ See APPLE_LICENSE.txt for licensing information.
 
 Abstract:
 Saving and Loading App defaults from file

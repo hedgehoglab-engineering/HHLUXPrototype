@@ -2,7 +2,7 @@
 //  ButtonStyles.swift
 //  HHLUXPrototype
 //
-//  Created by vlad on 11/08/2023.
+//  Created by Vlad Alexa on 11/08/2023.
 //
 
 import SwiftUI

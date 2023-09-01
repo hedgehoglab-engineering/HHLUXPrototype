@@ -2,7 +2,7 @@
 //  FloatingError.swift
 //  carolinegirvan
 //
-//  Created by vlad on 10/06/2022.
+//  Created by Vlad Alexa on 10/06/2022.
 //  Copyright © 2022 hedgehog lab. All rights reserved.
 //
 

@@ -1,14 +1,13 @@
 //
-//  HHLUXAppClipTests.swift
-//  HHLUXAppClipTests
+//  HHLUXPrototypeTests.swift
+//  HHLUXPrototypeTests
 //
-//  Created by Vlad Alexa on 16/08/2023.
+//  Created by vlad on 01/09/2023.
 //
 
 import XCTest
-@testable import HHLUXAppClip
 
-final class HHLUXAppClipTests: XCTestCase {
+final class HHLUXPrototypeTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,7 +27,7 @@ final class HHLUXAppClipTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

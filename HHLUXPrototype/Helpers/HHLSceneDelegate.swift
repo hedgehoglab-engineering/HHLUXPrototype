@@ -2,7 +2,7 @@
 //  HHLSceneDelegate.swift
 //  HHLUXPrototype
 //
-//  Created by vlad on 21/08/2023.
+//  Created by Vlad Alexa on 21/08/2023.
 //
 
 import UIKit
