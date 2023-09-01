@@ -2,7 +2,7 @@
 //  SymbolsView.swift
 //  HHLUXPrototype
 //
-//  Created by vlad on 10/08/2023.
+//  Created by Vlad Alexa on 10/08/2023.
 //
 
 import SwiftUI
@@ -35,23 +35,20 @@ struct SymbolsView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            settings
-                .padding(.horizontal)
-            ScrollView {
-                LazyVStack (alignment: .leading) {
-                    iconslist
-                }
-            }
-            .navigationViewStyle(.stack)
+        settings
+            .colorMultiply(.blue.mix(with: .white, amount: 0.5))
             .padding(.horizontal)
+        ScrollView {
+            LazyVStack (alignment: .leading) {
+                iconslist
+            }
         }
+        .padding(.horizontal)
         .searchable(text: $searchText, prompt: "Search")
     }
 
     var iconslist: some View {
-
-        return ForEach(searchResults, id: \.self) { element in
+        ForEach(searchResults, id: \.self) { element in
             HStack (alignment: .center) {
                 Image(systemName: element)
                     .symbolRenderingMode(multicolor ? .multicolor : .monochrome)
@@ -72,12 +69,18 @@ struct SymbolsView: View {
                 Text("Bold").tag(Font.Weight.bold)
                 Text("Black").tag(Font.Weight.black)
             }
+//            .onChange(of: weight) {
+//                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+//            }
             .pickerStyle(.segmented)
             HStack {
                 Picker(selection: $filled, label: Text("Fill")) {
                     Text("Filled").tag(true)
                     Text("Unfilled").tag(false)
                 }
+//                .onChange(of: filled) {
+//                    UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
+//                }
                 .pickerStyle(.segmented)
                 Picker(selection: $multicolor, label: Text("Color")) {
                     Text("Monochrome").tag(false)
@@ -85,7 +88,6 @@ struct SymbolsView: View {
                 }
                 .pickerStyle(.segmented)
             }
-
         }
     }
 
@@ -93,6 +95,6 @@ struct SymbolsView: View {
 
 struct SymbolsView_Previews: PreviewProvider {
     static var previews: some View {
-        SymbolsView()
+        NavigationStack { SymbolsView()}
     }
 }

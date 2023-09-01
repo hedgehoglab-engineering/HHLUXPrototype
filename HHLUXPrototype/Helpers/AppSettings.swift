@@ -1,14 +1,20 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+ See APPLE_LICENSE.txt for licensing information.
 
 Abstract:
 Saving and Loading App defaults from file
 */
 
-import Foundation
+import UIKit
+
 
 struct AppDefaults: Codable, Equatable {
-    var name: String
+
+    var name: String 
+
+    var lightMode = true
+
+    var orangeTint = false
 }
 
 extension AppDefaults {
@@ -19,8 +25,9 @@ extension AppDefaults {
 @MainActor class AppSettings: ObservableObject {
     
     @Published var defaults = AppDefaults.standard
-    private let settingsIO = SettingsIO()
     
+    private let settingsIO = SettingsIO()
+
 }
 
 // MARK: - AppSettings API

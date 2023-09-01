@@ -2,7 +2,7 @@
 //  MenuView.swift
 //  HHLUXPrototype
 //
-//  Created by vlad on 10/08/2023.
+//  Created by Vlad Alexa on 10/08/2023.
 //
 
 import SwiftUI
@@ -10,10 +10,22 @@ import SwiftUI
 struct MenuView: View {
 
     @State var presentEdit = false
-    @State var buttonTap = false
+
+    @ObservedObject private var backend = SimulatedBackendSingleton.sharedInstance
+
+    @EnvironmentObject private var appSettings: AppSettings
 
     var body: some View {
         ScrollView {
+            if #available(iOS 17.0, *) {
+                menu
+                    .symbolEffect(.bounce.down, value: backend.willFail)
+                    .symbolEffect(.bounce.up, value: backend.willTimeout)
+                    .symbolEffect(.bounce.byLayer, value: appSettings.defaults.orangeTint)
+                    .symbolEffect(.bounce.wholeSymbol, value: appSettings.defaults.lightMode)
+            } else {
+                menu
+            }
             ForEach(1..<4) { _ in
                 item
                     .padding(40)
@@ -21,11 +33,20 @@ struct MenuView: View {
                         testContextMenu
                     }
             }
+            Link(" HIG link ⤴", destination: URL(string: "https://developer.apple.com/design/human-interface-guidelines/context-menus")!)
         }
     }
 
+    var menu: some View {
+        Menu(content: {
+            SettingsView()
+        }, label: {
+            Label("Tap for floating menu", systemImage: "hand.tap")
+        })
+    }
+
     var item: some View {
-        Text("Tap and hold for menu")
+        Text("Tap and hold for contextual menu")
             .padding(40)
             .background(Color(UIColor.secondarySystemBackground))
             .clipShape(backgroundRectangle)
@@ -40,6 +61,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView()
+            .environmentObject(AppSettings())
     }
 }
 
