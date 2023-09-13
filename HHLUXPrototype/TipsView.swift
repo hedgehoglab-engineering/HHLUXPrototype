@@ -8,7 +8,6 @@
 import SwiftUI
 import TipKit
 
-@available(iOS 17.0, *)
 struct FavoriteLandmarkTip: Tip {
     var title: Text {
         Text("Save as a Favorite")
@@ -21,7 +20,6 @@ struct FavoriteLandmarkTip: Tip {
     }
 }
 
-@available(iOS 17.0, *)
 struct FavoriteSongTip: Tip {
     var title: Text {
         Text("Save song")
@@ -34,7 +32,6 @@ struct FavoriteSongTip: Tip {
     }
 }
 
-@available(iOS 17.0, *)
 struct FavoritePhotoTip: Tip {
     var title: Text {
         Text("Save photo")
@@ -47,8 +44,6 @@ struct FavoritePhotoTip: Tip {
     }
 }
 
-
-@available(iOS 17.0, *)
 struct TipsView: View {
 
     var landmarkTip = FavoriteLandmarkTip()
@@ -80,10 +75,10 @@ struct TipsView: View {
             .padding()
         }
         .task {
-            try? await Tips.configure {
-                DisplayFrequency(.immediate)
-                DatastoreLocation(.applicationDefault)
-            }
+            try? Tips.configure ([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)
+            ])
         }
     }
 }

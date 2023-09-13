@@ -14,7 +14,6 @@ struct InputView: View {
 
     @State var typing = false
 
-    @available(iOS 17.0, *)
     var feedback: some View {
         Image(systemName:"rectangle.stack")
             .symbolEffect(.bounce.byLayer, value: typing)

@@ -49,7 +49,6 @@ struct CtaView: View {
         .font(.largeTitle)
     }
 
-    @available(iOS 17.0, *)
     var fav0: some View {
         Image(systemName: favorite0.isDisabled ? favorite0.isFailed ? favorite0.iconFailure: favorite0.iconSuccess : favorite0.icon)
             .onTapGesture() {
