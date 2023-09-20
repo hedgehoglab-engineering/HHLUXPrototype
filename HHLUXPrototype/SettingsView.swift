@@ -25,12 +25,8 @@ struct SettingsView: View {
             stepper
             Text("SwiftUI \(Bundle.main.swiftuiVersionNumber)")
                 .font(.footnote)
-            if #available(iOS 17.0, *) {
-                label
-                    .symbolEffect(.bounce.down, value: backend.delayValue)
-            } else {
-                label
-            }
+            label
+                .symbolEffect(.bounce.down, value: backend.delayValue)
         }
         .tint(.blue.mix(with: .white, amount: 0.5))
     }

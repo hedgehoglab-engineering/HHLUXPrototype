@@ -17,15 +17,11 @@ struct MenuView: View {
 
     var body: some View {
         ScrollView {
-            if #available(iOS 17.0, *) {
-                menu
-                    .symbolEffect(.bounce.down, value: backend.willFail)
-                    .symbolEffect(.bounce.up, value: backend.willTimeout)
-                    .symbolEffect(.bounce.byLayer, value: appSettings.defaults.orangeTint)
-                    .symbolEffect(.bounce.wholeSymbol, value: appSettings.defaults.lightMode)
-            } else {
-                menu
-            }
+            menu
+                .symbolEffect(.bounce.down, value: backend.willFail)
+                .symbolEffect(.bounce.up, value: backend.willTimeout)
+                .symbolEffect(.bounce.byLayer, value: appSettings.defaults.orangeTint)
+                .symbolEffect(.bounce.wholeSymbol, value: appSettings.defaults.lightMode)
             ForEach(1..<4) { _ in
                 item
                     .padding(40)

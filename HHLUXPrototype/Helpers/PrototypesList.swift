@@ -27,12 +27,7 @@ class PrototypesList: ObservableObject {
     subscript(category category: Category) -> [Prototype] {
         switch category {
         case .primary: [.buttons, .selectors, .switches, .pickers, .input, .lists]
-        case .secondary:
-            if #available(iOS 17.0, *) {
-                [.popups, .tips, .menus, .loading]
-            } else {
-                [.popups, .menus, .loading]
-            }
+        case .secondary: [.popups, .tips, .menus, .loading]
         case .extra: [.states, .symbols]
         case .ipad: [.multitasking]
         }
@@ -85,7 +80,7 @@ enum Prototype: String, CaseIterable, Codable, Identifiable {
         case .pickers: PickersView()
         case .input: InputView()
         case .popups: PopupsView()
-        case .tips: if #available(iOS 17.0, *) { TipsView() }
+        case .tips: TipsView()
         case .lists: ListsView()
         case .menus: MenuView()
         case .haptics: HapticsView()

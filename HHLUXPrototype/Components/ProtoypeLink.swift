@@ -77,11 +77,7 @@ struct ProtoypeLink: View {
 
     func openCenter(value: Prototype) {
         let options = UIWindowScene.ActivationRequestOptions()
-        if #available(iOS 17.0, *) {
-            options.placement = UIWindowSceneProminentPlacement()
-        } else {
-            options.preferredPresentationStyle = .prominent
-        }
+        options.placement = UIWindowSceneProminentPlacement()
         let userActivity = NSUserActivity(activityType: value.rawValue)
         UIApplication.shared.requestSceneSessionActivation(nil, userActivity: userActivity, options: options) { error in
             print(error)

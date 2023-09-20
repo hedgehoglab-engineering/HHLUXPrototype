@@ -85,8 +85,6 @@ struct TipsView: View {
 
 struct TipsView_Previews: PreviewProvider {
     static var previews: some View {
-        if #available(iOS 17.0, *) {
-            TipsView()
-        }
+        TipsView()
     }
 }

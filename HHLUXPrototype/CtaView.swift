@@ -39,10 +39,8 @@ struct CtaView: View {
                 .environment(\.isEnabled, !favorite3.isDisabled)
             fav2
                 .environment(\.isEnabled, !favorite2.isDisabled)
-            if #available(iOS 17.0, *) {
-                fav0
-                    .environment(\.isEnabled, !favorite0.isDisabled)
-            }
+            fav0
+                .environment(\.isEnabled, !favorite0.isDisabled)
         }
         .nonSpammable()
         .padding()

@@ -157,11 +157,7 @@ struct ListsView: View {
                 }
             }
         } detail: {
-            if #available(iOS 17.0, *) {
-                ContentUnavailableView("Use sidebar navigation", systemImage: "sidebar.left")
-            } else {
-                Label("Use sidebar navigation", systemImage: "sidebar.left")
-            }
+            ContentUnavailableView("Use sidebar navigation", systemImage: "sidebar.left")
         }
     }
 

@@ -21,9 +21,7 @@ struct InputView: View {
 
     var body: some View {
         VStack {
-            if #available(iOS 17.0, *) {
-                feedback
-            }
+            feedback
             List {
                 Section("Standard single line, .horizontal") {
                     TextField("", text: $textSingle) {

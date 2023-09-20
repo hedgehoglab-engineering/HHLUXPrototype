@@ -62,11 +62,9 @@ struct CtaViewList: View {
                 Image(systemName: "sun.max")
                 Text("- button with haptic feedback and progress bar (non spammable)")
             }
-            if #available(iOS 17.0, *) {
-                HStack {
-                    Image(systemName: "flag")
-                    Text("- button with state animation (non spammable)")
-                }
+            HStack {
+                Image(systemName: "flag")
+                Text("- button with state animation (non spammable)")
             }
         }
         .font(.caption2)

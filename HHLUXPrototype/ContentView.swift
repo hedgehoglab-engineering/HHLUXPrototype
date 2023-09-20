@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct ContentView: View {
 
@@ -31,6 +32,10 @@ struct ContentView: View {
 
     @State private var centeredPrototype: Prototype?
 
+    var multiTip = MultitaskingTip()
+
+    var settingsTip = SettingsTip()
+
     var body: some View {
         Group {
             if centeredPrototype != nil {
@@ -44,6 +49,12 @@ struct ContentView: View {
         }
         .onAppear {
             setAppearance()
+        }
+        .task {
+            try? Tips.configure ([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)
+            ])
         }
         .onChange(of: scenePhase) { newPhase in
             if newPhase == .active {
@@ -102,12 +113,8 @@ struct ContentView: View {
             .navigationSplitViewStyle(.balanced)
             .navigationBarTitleDisplayMode(.inline)
         } detail: {
-            if #available(iOS 17.0, *) {
-                shakeButton
-                    .symbolEffect(.bounce.byLayer, value: shake)
-            } else {
-                shakeButton
-            }
+            shakeButton
+                .symbolEffect(.bounce.byLayer, value: shake)
         }
     }
 
@@ -149,6 +156,7 @@ struct ContentView: View {
 
     var footer: some View {
         VStack {
+            TipView(settingsTip, arrowEdge: .bottom)
             settingsMenu
                 .font(.callout)
                 .padding()
@@ -172,6 +180,9 @@ struct ContentView: View {
             Section {
                 ForEach (model[category: .primary]) {
                     ProtoypeLink(type: $0)
+                }
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    TipView(multiTip, arrowEdge: .top)
                 }
             }
             Section {
@@ -199,6 +210,25 @@ struct ContentView: View {
         }
     }
 
+}
+
+extension ContentView {
+    struct MultitaskingTip: Tip {
+        var title: Text {
+            Text("Multitasking")
+        }
+        var message: Text? {
+            Text("Long press on any categories for the multitasking and shortcut menu.")
+        }
+        var asset: Image? {
+            Image(systemName: "light.panel")
+        }
+    }
+    struct SettingsTip: Tip {
+        var title: Text {
+            Text("Check out the settings")
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
