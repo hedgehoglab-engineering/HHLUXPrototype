@@ -12,6 +12,11 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - uses: actions/checkout@v3
+      - name: Xcode Select Version
+        uses: mobiledevops/xcode-select-version-action@v1
+        with:
+          xcode-select-version: 15.0        
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set Default Scheme
