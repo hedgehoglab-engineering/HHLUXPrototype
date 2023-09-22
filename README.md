@@ -1,7 +1,7 @@
 #  HHLUXPrototype
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Build Status](https://github.com/hedgehoglab-engineering/HHLUXPrototype/actions/workflows/main.yml/badge.svg)]
+[![Build Status](https://github.com/hedgehoglab-engineering/HHLUXPrototype/actions/workflows/main.yml/badge.svg)](https://github.com/hedgehoglab-engineering/HHLUXPrototype/actions/workflows/main.yml)
 
 This is a Hedgehog lab UI components and more prototyping tool for to enable on device experimentation with the full nuances and edge cases of every UI piece as well as showcasing whenever possible customisation options available.
 It also serves as a code repository for developers to store barebones implementations of common elements and behaviours.
